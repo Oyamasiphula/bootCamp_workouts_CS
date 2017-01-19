@@ -19,11 +19,15 @@
 
 
 
+
+
+
     <h3>Greet friend 2nd version</h3>
 
-    <p>Name: <input value="" name="specifyName" id="specifyName2ndVer"></p>
+    <p>Name: <input name="specifyName" id="specifyName2ndVer"></p>
 
     <p id="specifyName2ndVerPlaceHolder"></p>
+
     <button type="button" name="button" onclick="getName2ndVer()">Submit</button>
 
 
@@ -35,7 +39,7 @@
 
         var getName2ndVer = function() {
             var name = document.getElementById('specifyName2ndVer');
-            document.getElementById('specifyName2ndVerPlaceHolder').innerHTML = "Hello ," + name.specifyName2ndVerPlaceHolder + " Have a great day!";
+            document.getElementById('specifyName2ndVerPlaceHolder').innerHTML = "Hello ," + document.getElementById('specifyName2ndVer').value + " Have a great day!";
         };
     </script>
 </body>
