@@ -4,39 +4,53 @@
 <head>
     <meta charset="utf-8">
     <title>Greet a friend</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
 </head>
 
 <body>
-    <h4>Greet a friend</h4>
+    <div class="container">
+        <div class="row">
 
-    <p>Hello
-        <name id="specifyName">,________</name> have a great day!</p>
+            <div class="one-half column" style="margin-top: 25%">
+                <h4>Basic Page</h4>
+                <h4>Greet a friend</h4>
 
-    <button type="button" name="button" onclick="getName()">Submit</button>
+                <p>Hello
+                    <name id="specifyName">,________</name> have a great day!</p>
 
+                <button type="button" name="button" onclick="getName()">Submit</button>
 
+            </div>
+            <div class="one-half column" style="margin-top: 25%">
+              <h3>Greet friend 2nd version</h3>
 
+              <p>Name: <input name="specifyName" id="specifyName2ndVer"></p>
 
+              <p id="specifyName2ndVerPlaceHolder"></p>
 
+              <button type="button" name="button" onclick="getName2ndVer()">Submit</button>
+            </div>
 
-
-
-
-    <h3>Greet friend 2nd version</h3>
-
-    <p>Name: <input name="specifyName" id="specifyName2ndVer"></p>
-
-    <p id="specifyName2ndVerPlaceHolder"></p>
-
-    <button type="button" name="button" onclick="getName2ndVer()">Submit</button>
-
+        </div>
+    </div>
 
     <script type="text/javascript">
         var getName = function() {
             var name = prompt();
             document.getElementById('specifyName').innerHTML = name;
         };
-
         var getName2ndVer = function() {
             var name = document.getElementById('specifyName2ndVer');
             document.getElementById('specifyName2ndVerPlaceHolder').innerHTML = "Hello ," + document.getElementById('specifyName2ndVer').value + " Have a great day!";
