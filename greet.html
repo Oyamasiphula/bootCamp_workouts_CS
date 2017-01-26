@@ -19,8 +19,13 @@
 
 </head>
 
-<body>
+<body >
     <div class="container">
+      <div class="row">
+    <div class="one column">One</div>
+    <div class="eleven columns">Eleven</div>
+      </div>
+
         <div class="row">
 
             <div class="one-half column" style="margin-top: 25%">
@@ -30,17 +35,16 @@
                 <p>Hello
                     <name id="specifyName">,________</name> have a great day!</p>
 
-                <button type="button" name="button" onclick="getName()">Submit</button>
+                <button class="button-primary" type="button" name="button" onclick="getName()">Submit</button>
 
             </div>
             <div class="one-half column" style="margin-top: 25%">
               <h3>Greet friend 2nd version</h3>
 
-              <p>Name: <input name="specifyName" id="specifyName2ndVer"></p>
+              <p>Name: <input class="u-full-width" name="specifyName" id="specifyName2ndVer"></p>
 
               <p id="specifyName2ndVerPlaceHolder"></p>
-
-              <button type="button" name="button" onclick="getName2ndVer()">Submit</button>
+              <button class="button-primary" type="button" name="button" onclick="getName2ndVer()">Submit</button>
             </div>
 
         </div>
