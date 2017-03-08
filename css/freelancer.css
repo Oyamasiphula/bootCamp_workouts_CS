@@ -47,6 +47,7 @@ section {
 }
 
 #menu {
+    padding-top: 10em;
     border: 1px solid black;
     background: url("../images/blue_fog_by_tanath-d4vnb2l.jpg");
     height: 100%;
