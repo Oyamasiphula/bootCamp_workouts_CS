@@ -103,3 +103,8 @@ section {
 .neato-header h2:after {
     margin-left: 30px;
 }
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+    color: #FFF;
+    background-color: #402222;
+    border-color: #33C3F0;
+}
