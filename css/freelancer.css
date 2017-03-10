@@ -108,3 +108,11 @@ section {
     background-color: #402222;
     border-color: #33C3F0;
 }
+ .messages{
+    background-color: #7d7d7b;
+    font-style: normal;
+    color: black;
+    border-radius: 4px;
+    padding: 1em;
+    margin-bottom: 11%;
+  }
