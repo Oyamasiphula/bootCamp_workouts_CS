@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/freelancer.css">
-
     <link rel="icon" type="jpg" href="../images/greetIcon.jpg">
     <script src="../js/greet/greet.js" charset="utf-8"></script>
 
@@ -27,8 +26,20 @@
                 <h3>Greet friend first version</h3>
 
                 <p>Name: <input class="u-full-width" name="specifyName" id="specifyName"></p>
+                <!-- <form> -->
+                Choose language?<br>
+                <input type="radio" name="languages" value="Sotho" id="seSotho">seSotho
+                <input type="radio" name="languages" value="Xhosa" id="seiXhosa">isiXhosa
+                <input type="radio" name="languages" value="English" id="English">English<br>
+              <!-- </form> -->
+                <br>
 
-                <p id="speciedNameDisplay"></p>
+                <div class="messages">
+                <pre id="speciedNameDisplay"></pre>
+  
+                <pre id="totalNumOfGreetings"></pre>
+              </div>
+
                 <button id="okButton" class="button-primary" type="button" name="button">Submit</button>
                 <button id="backButton" class="button-primary" type="button" name="button">Back</button>
             </div>
