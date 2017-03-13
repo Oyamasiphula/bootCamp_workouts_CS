@@ -3,9 +3,9 @@ var nameFieldInput = document.getElementById('specifyName');
 var radios = document.getElementsByName('languages');
 var backButtonElement = document.querySelector("#backButton");
 
-
 var count = 0;
-
+var myStorage = localStorage;
+var count = localStorage.getItem('count');
 var getNameVal = function() {
 
     var name = nameFieldInput.value;
@@ -23,6 +23,7 @@ var getNameVal = function() {
         }
         document.getElementById('speciedNameDisplay').innerHTML = greet(selectedLanguage, getName(name));
         count++;
+        myStorage.setItem("count", count);
         document.querySelector("#totalNumOfGreetings").innerHTML = count;
         nameFieldInput.value = '';
     }
