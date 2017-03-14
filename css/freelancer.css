@@ -103,16 +103,24 @@ section {
 .neato-header h2:after {
     margin-left: 30px;
 }
+#resetButton {
+  color: #f50101;
+    float: right;
+    background-color: #5fc74d;
+}
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
     color: #FFF;
     background-color: #402222;
     border-color: #33C3F0;
 }
- .messages{
-    background-color: #7d7d7b;
-    font-style: normal;
-    color: black;
-    border-radius: 4px;
-    padding: 1em;
-    margin-bottom: 11%;
-  }
+
+.messages {
+   background: url(http://www.beachcombershotel.co.uk/wp-content/uploads/beachcombers-top-a-background-fill.jpg);
+   height: 9em;
+   width: 30em;
+   text-align: center;
+   font-style: normal;
+   color: rgba(230, 230, 230, 0.85);
+   background-size: cover;
+   border-radius: 4px;
+}
