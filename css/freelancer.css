@@ -1,4 +1,4 @@
-* {
+q* {
     margin: 0;
     padding: 0;
     box-sizing: border-box
@@ -12,13 +12,22 @@ html, body {
     left: 0;
     top: 0;
 }
-
 body {
     background-color: rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.1);
-    /*margin: 5em;*/
 }
+.container{
+  margin: 50px auto;
+  overflow: overlay;
+  border: 10px solid;
+  padding: 2em;
+  border-top-color: rgba(34, 50, 117, 0.88);
+  border-left-color: rgba(38, 50, 93, 0.75);
+  border-bottom-color: rgba(10, 17, 38, 0.75);
+  border-right-color: rgba(52, 66, 167, 0.88);
+  position: relative;
 
+}
 .header {
     margin: 2em;
     position: fixed;
@@ -123,4 +132,10 @@ section {
    color: rgba(230, 230, 230, 0.85);
    background-size: cover;
    border-radius: 4px;
+}
+ pre {
+    margin-bottom: 1.5rem;
+    font-size: x-large;
+    background-color: rgba(0, 100, 0, 0.41);
+    opacity: .8;
 }
