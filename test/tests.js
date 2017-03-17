@@ -27,6 +27,10 @@ describe("Test for all the client JS code", function() {
     });
     it("Should test for isFromGauteng function", function() {
         assert.equal(isFromGauteng("DR 45 LR GP"), true);
-          assert.equal(isFromGauteng("CJ 123 908"), false );
+        assert.equal(isFromGauteng("CJ 123 908"), false);
+    });
+    it("Should test for isFromLimpopo function", function() {
+        assert.equal(isFromLimpopo("DRT 122 L");, true);
+        assert.equal(isFromGauteng("CJ 123 908"), false);
     });
 });
