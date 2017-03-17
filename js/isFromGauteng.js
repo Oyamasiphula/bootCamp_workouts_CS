@@ -1,4 +1,4 @@
-var isFromGauteng = function(regNum){
-	let regNumCheck = regNum.endsWith("GP");
-  	return regNumCheck;
+var isFromGauteng = function(regNum) {
+    let regNumCheck = regNum.endsWith("GP");
+    return regNumCheck;
 }
