@@ -49,4 +49,8 @@ describe("Test for all the client JS code", function() {
         assert.equal(regCount, 3);
         assert.equal(regCount2, 5);
     });
+    it("Should test for isDayName function which returns true if day param 'string' value is one of the week Days", function() {
+        assert.equal(isDayName('Saturday'), false);
+        assert.equal(isDayName('Monday'), true);
+    });
 });
