@@ -43,4 +43,10 @@ describe("Test for all the client JS code", function() {
         assert.equal(isGP, true);
         assert.equal(isMP, false);
     });
+    it("Should test for countRegNumber function and should return total number of Registration numbers", function() {
+        var regCount = countRegNumber('CA 182736,CY 523519,CJ 812328')
+        var regCount2 = countRegNumber('CA 182736,CY 523519,CJ 812328,JHB 87868,CY 98439')
+        assert.equal(regCount, 3);
+        assert.equal(regCount2, 5);
+    });
 });
