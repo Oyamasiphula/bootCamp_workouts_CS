@@ -14,7 +14,6 @@ var greet = function(language,name) {
         return English_greet;
     };
 };
-
 var getName = function(name) {
     return name;
 };
