@@ -53,4 +53,12 @@ describe("Test for all the client JS code", function() {
         assert.equal(isDayName('Saturday'), false);
         assert.equal(isDayName('Monday'), true);
     });
+    it("Should test for isDayName function which returns false if day param 'string' value is one of the weekends", function() {
+        assert.equal(isWeekday('Saturday'), false);
+        assert.equal(isWeekday('Monday'), true);
+    });
+    it("Should test for yearsAgo function which returns the range", function() {
+        assert.equal(yearsAgo("12-12-2011"), 6);
+        assert.equal(yearsAgo("12-12-1993"), 24);
+    });
 });
