@@ -30,7 +30,17 @@ describe("Test for all the client JS code", function() {
         assert.equal(isFromGauteng("CJ 123 908"), false);
     });
     it("Should test for isFromLimpopo function", function() {
-        assert.equal(isFromLimpopo("DRT 122 L");, true);
+        assert.equal(isFromLimpopo("DRT 122 L"), true);
         assert.equal(isFromGauteng("CJ 123 908"), false);
+    });
+    it("Should test for isFrom function and should return a boolean based on the location", function() {
+        assert.equal(isFrom("CJ 7342", "CJ"), true);
+        assert.equal(isFrom("CJ 7342", "CY"), false);
+    });
+    it("Should test for regCheck function and should return a boolean based on the location", function() {
+        var isGP = regCheck('DV 23 NB GP', 'GP');
+        var isMP = regCheck('DV 23 LP GP', 'MP');
+        assert.equal(isGP, true);
+        assert.equal(isMP, false);
     });
 });
