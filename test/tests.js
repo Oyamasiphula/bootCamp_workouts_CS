@@ -64,4 +64,15 @@ describe("Test for all the client JS code", function() {
     it("Should test for sameWeekday function which returns true if the days of two dates are the same", function() {
         assert.equal(sameWeekday("2016-11-19","2016-11-19"), true);
     });
+    it("Should test for launchWhere function which returns the place based on a bank balance value", function() {
+        assert.equal(lunchWhere(4500), "Two minute noodles today!");
+        assert.equal(lunchWhere(3500), "Go to PnP!");
+        assert.equal(lunchWhere(1000), "Two minute noodles today!");
+    });
+    it("Should test for switch cases/statements function which returns a platform number or train if the case isn't found", function() {
+        assert.equal(whichPlatform('Langa'), "platform 1");
+        assert.equal(whichPlatform('Stellenbosch'), "platform 6");
+        assert.equal(whichPlatform('Wynberg'), "Platform 2");
+        assert.equal(whichPlatform('Parow'), "There is no train to Parow");
+    });
 });
