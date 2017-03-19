@@ -58,7 +58,10 @@ describe("Test for all the client JS code", function() {
         assert.equal(isWeekday('Monday'), true);
     });
     it("Should test for yearsAgo function which returns the range", function() {
-        assert.equal(yearsAgo("12-12-2011"), 6);
-        assert.equal(yearsAgo("12-12-1993"), 24);
+        assert.equal(yearsAgo(1976), 41);
+        assert.equal(yearsAgo2ndVer("12-12-1976"), 41);
+    });
+    it("Should test for sameWeekday function which returns true if the days of two dates are the same", function() {
+        assert.equal(sameWeekday("2016-11-19","2016-11-19"), true);
     });
 });
