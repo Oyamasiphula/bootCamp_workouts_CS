@@ -1,8 +1,9 @@
-var greet = function(language,name) {
+var greet = function(language, name) {
+    var properNameForm = name.charAt(0).toUpperCase() + name.substring(1)
 
-    var Sotho_greet = "Dumela, " + name;
-    var Xhosa_greet = "Molo, " + name;
-    var English_greet = "Hello, " + name;
+    var Sotho_greet = "Dumela, " + properNameForm;
+    var Xhosa_greet = "Molo, " + properNameForm;
+    var English_greet = "Hello, " + properNameForm;
 
     if ("Sotho" === language) {
         return Sotho_greet;
@@ -15,5 +16,6 @@ var greet = function(language,name) {
     };
 };
 var getName = function(name) {
-    return name;
+    var properNameForm = name.charAt(0).toUpperCase() + name.substring(1);
+    return properNameForm;
 };
