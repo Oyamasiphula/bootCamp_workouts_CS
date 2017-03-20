@@ -81,7 +81,7 @@ describe("Test for all the client JS code", function() {
         assert.equal(weekOrWeekend("Sunday"), "weekend");
 
     });
-    it("Should test for transportFee function which returns price of transport based param value", function() {
+    it("Should test for transportFee function which returns the price of a transport based param value", function() {
         assert.equal(transportFee("morning"), "R20");
         assert.equal(transportFee("afternoon"), "R10");
         assert.equal(transportFee("night"), "free");
