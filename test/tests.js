@@ -62,7 +62,7 @@ describe("Test for all the client JS code", function() {
         assert.equal(yearsAgo2ndVer("12-12-1976"), 41);
     });
     it("Should test for sameWeekday function which returns true if the days of two dates are the same", function() {
-        assert.equal(sameWeekday("2016-11-19","2016-11-19"), true);
+        assert.equal(sameWeekday("2016-11-19", "2016-11-19"), true);
     });
     it("Should test for launchWhere function which returns the place based on a bank balance value", function() {
         assert.equal(lunchWhere(4500), "Two minute noodles today!");
@@ -79,6 +79,19 @@ describe("Test for all the client JS code", function() {
         assert.equal(weekOrWeekend("Wednesday"), "week");
         assert.equal(weekOrWeekend("Saturday"), "weekend");
         assert.equal(weekOrWeekend("Sunday"), "weekend");
+
+    });
+    it("Should test for transportFee function which returns price of transport based param value", function() {
+        assert.equal(transportFee("morning"), "R20");
+        assert.equal(transportFee("afternoon"), "R10");
+        assert.equal(transportFee("night"), "free");
+
+    });
+    it("Should test for fromWhere function which returns the place of transport based registration param value", function() {
+        assert.equal(fromWhere("CA 8786"), "Cape Town");
+        assert.equal(fromWhere("CJ 42543"), "Paarl");
+        assert.equal(fromWhere("CY"), "Bellville");
+        assert.equal(fromWhere(""), "Some other place!");
 
     });
 });
