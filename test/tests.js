@@ -75,4 +75,10 @@ describe("Test for all the client JS code", function() {
         assert.equal(whichPlatform('Wynberg'), "Platform 2");
         assert.equal(whichPlatform('Parow'), "There is no train to Parow");
     });
+    it("Should test for weekOrWeekend function which returns week if day param value is one of weekdays", function() {
+        assert.equal(weekOrWeekend("Wednesday"), "week");
+        assert.equal(weekOrWeekend("Saturday"), "weekend");
+        assert.equal(weekOrWeekend("Sunday"), "weekend");
+
+    });
 });
