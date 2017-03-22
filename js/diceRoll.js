@@ -16,5 +16,4 @@ var diceRoll = function() {
             return 'You rolled: ' + rolledNumber;
         }
     }
-
 };
