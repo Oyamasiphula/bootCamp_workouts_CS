@@ -94,4 +94,14 @@ describe("Test for all the client JS code", function() {
         assert.equal(fromWhere(""), "Some other place!");
 
     });
+    it("Should test for morningReminder function which returns action to take", function() {
+        var currentTimeState = new Date();
+        var hours = currentTimeState.getHours();
+        var minutes = currentTimeState.getMinutes();
+        var ampm = (hours >= 12) ? "PM" : "AM";
+        var getPropTimeForm = hours + ":" + minutes + " " + ampm;
+
+        assert.equal(morningReminder(getPropTimeForm, "up"), "something you are doing it wrong check the time !");
+        assert.equal(morningReminder(getPropTimeForm, "busy"), "Its afternoon ndoda !!! Try to reschedule your daily program for the day");
+    });
 });
