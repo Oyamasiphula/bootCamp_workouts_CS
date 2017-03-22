@@ -101,7 +101,10 @@ describe("Test for all the client JS code", function() {
         var ampm = (hours >= 12) ? "PM" : "AM";
         var getPropTimeForm = hours + ":" + minutes + " " + ampm;
 
-        assert.equal(morningReminder(getPropTimeForm, "up"), "something you are doing it wrong check the time !");
-        assert.equal(morningReminder(getPropTimeForm, "busy"), "Its afternoon ndoda !!! Try to reschedule your daily program for the day");
+        assert.equal("Its afternoon ndoda !!! Try to reschedule your daily program for the day", morningReminder("6:15 AM", "up"));
+        assert.equal("Its afternoon ndoda !!! Try to reschedule your daily program for the day", morningReminder(getPropTimeForm, "busy"));
+    });
+    it("Should test for diceRoll function which returns only when the conditional statement requirement's condition eval has been met(is true)", function() {
+        assert.equal("You rolled: 6", diceRoll());
     });
 });
