@@ -107,4 +107,16 @@ describe("Test for all the client JS code", function() {
     it("Should test for diceRoll function which returns only when the conditional statement requirement's condition eval has been met(is true)", function() {
         assert.equal("You rolled: 6", diceRoll());
     });
+    it("Should test for shoppingList function which displays a proper of a list", function() {
+        assert.equal('Shopping list:', logList[0]);
+        assert.equal('* 1x bread', logList[1]);
+        assert.equal('* 6x hotdog rolls', logList[2]);
+        assert.equal('* 2x tubs of margarine ', logList[3]);
+    });
+    it("Should test for shoppingList function which displays a proper of a list of registration number plates", function() {
+        assert.equal(logList[0], 'CY 123 456');
+        assert.equal(logList[1], 'CL 876 895');
+        assert.equal(logList[2], 'CK 456 765');
+        assert.equal(logList[3], 'CA 345 673');
+    });
 });
