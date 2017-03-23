@@ -119,4 +119,7 @@ describe("Test for all the client JS code", function() {
         assert.equal(logList[2], 'CK 456 765');
         assert.equal(logList[3], 'CA 345 673');
     });
+    it("Should test for allPaarl function that returns all registration number plates from Paarl", function() {
+            assert.deepEqual([ 'CJ 678 543', 'CJ 67890' ], allPaarl('CL 900, CJ 678 543, CA 34567, CJ 67890, CN 7864'));
+    });
 });
