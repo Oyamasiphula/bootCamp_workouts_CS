@@ -108,18 +108,22 @@ describe("Test for all the client JS code", function() {
         assert.equal("You rolled: 6", diceRoll());
     });
     it("Should test for shoppingList function which displays a proper of a list", function() {
-        assert.equal('Shopping list:', logList[0]);
-        assert.equal('* 1x bread', logList[1]);
-        assert.equal('* 6x hotdog rolls', logList[2]);
-        assert.equal('* 2x tubs of margarine ', logList[3]);
+        var listResults = shoppingList('1x bread, 6x hotdog rolls, 2x tubs of margarine ');
+
+        assert.equal(listResults[0], 'Shopping list:');
+        assert.equal(listResults[1], '* 1x bread');
+        assert.equal(listResults[2], '* 6x hotdog rolls');
+        assert.equal(listResults[3], '* 2x tubs of margarine ');
     });
-    it("Should test for shoppingList function which displays a proper of a list of registration number plates", function() {
-        assert.equal(logList[0], 'CY 123 456');
-        assert.equal(logList[1], 'CL 876 895');
-        assert.equal(logList[2], 'CK 456 765');
-        assert.equal(logList[3], 'CA 345 673');
+    it("Should test for displayEachRegNumber function which displays a proper of a list of registration number plates", function() {
+        var registrationPlatelistResults = displayEachRegNumber(['CY 123 456', 'CL 876 895', 'CK 456 765', 'CA 345 673']);
+
+        assert.equal(registrationPlatelistResults[0], 'CY 123 456');
+        assert.equal(registrationPlatelistResults[1], 'CL 876 895');
+        assert.equal(registrationPlatelistResults[2], 'CK 456 765');
+        assert.equal(registrationPlatelistResults[3], 'CA 345 673');
     });
     it("Should test for allPaarl function that returns all registration number plates from Paarl", function() {
-            assert.deepEqual([ 'CJ 678 543', 'CJ 67890' ], allPaarl('CL 900, CJ 678 543, CA 34567, CJ 67890, CN 7864'));
+        assert.deepEqual(['CJ 678 543', 'CJ 67890'], allPaarl('CL 900, CJ 678 543, CA 34567, CJ 67890, CN 7864'));
     });
 });
