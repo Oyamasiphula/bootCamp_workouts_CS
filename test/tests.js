@@ -126,4 +126,10 @@ describe("Test for all the client JS code", function() {
     it("Should test for allPaarl function that returns all registration number plates from Paarl", function() {
         assert.deepEqual(['CJ 678 543', 'CJ 67890'], allPaarl('CL 900, CJ 678 543, CA 34567, CJ 67890, CN 7864'));
     });
+    it("Should test for allFromTown function that returns all registration number plates from a specific town", function() {
+      var fromStellies = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341','CL');
+      assert.deepEqual(fromStellies, ['CL 124', 'CL 345', 'CL 341'])
+      var fromKuilsriver = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341','CF');
+      assert.deepEqual(fromKuilsriver, [])
+    });
 });
