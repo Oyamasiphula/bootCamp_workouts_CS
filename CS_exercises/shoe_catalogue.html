@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Shoe catalogue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/freelancer.css">
+    <link rel="icon" type="jpg" href="../images/greetIcon.jpg">
+    <script src="../js/deps/handlebars.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <h1 align="center">Shoe Catalogue</h1>
+
+    <script class="options" type="text/x-handlebars-template">
+            <select class="color" name="">
+              {{#each color}}
+              <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+            <br>
+            <select class="sizes" name="">
+              {{#each sizes}}
+              <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+
+    </script>
+
+<script class="message" type="text/x-handlebars-template">
+  {{#each NoOfShoesAvail}}
+   <h4 class="messageOut">We have {{this}} of shoes in stock.</h4>
+  {{/each}}
+</script>
+    <div class="dataListContainer">
+    </div>
+    <script src="../js/shoe_catalogue/shoeCatalogue.js" charset="utf-8"></script>
+</body>
+
+<style media="screen">
+div.dataListContainer{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: -60%;
+    margin-top: 6em;
+  }
+
+  table, th, td {
+   border: 1px solid black;
+}
+</style>
+
+</html>
