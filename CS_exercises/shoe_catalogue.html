@@ -36,23 +36,39 @@
    <h4 class="messageOut">We have {{this}} of shoes in stock.</h4>
   {{/each}}
 </script>
+
+<script class="message" type="text/x-handlebars-template">
+  {{#each NoOfShoesAvail}}
+   <h4 class="messageOut">We have {{this}} of shoes in stock.</h4>
+  {{/each}}
+</script>
+<script class="searchedDataSummary" type="text/x-handlebars-template">
+  <h2  align="center">Search Result</h2>
+
+  <table  align="center">
+    <tr>
+      <th>Brand</th>
+      <th>Color</th>
+      <th>Size</th>
+      <th>Price</th>
+  {{#each dataSearched}}
+    </tr>
+    <td>{{this.brand}}</td>
+    <td>{{this.color}}</td>
+    <td>{{this.size}}</td>
+    <td>{{this.price}}</td>
+  </tr>
+  {{/each}}
+</table>
+</script>
     <div class="dataListContainer">
     </div>
+    <div class="messageContainer">
+    </div>
+    <div class="searchResults">
+    </div>
+
+    <button class="searchButton" type="button" name="button">Search</button>
     <script src="../js/shoe_catalogue/shoeCatalogue.js" charset="utf-8"></script>
 </body>
-
-<style media="screen">
-div.dataListContainer{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-left: -60%;
-    margin-top: 6em;
-  }
-
-  table, th, td {
-   border: 1px solid black;
-}
-</style>
-
 </html>
