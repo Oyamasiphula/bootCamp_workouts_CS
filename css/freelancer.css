@@ -139,6 +139,23 @@ section {
     border-radius: 4px
 }
 
+div.dataListContainer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: -60%;
+    margin-top: 6em;
+}
+
+table, th, td {
+    border: 2px solid black;
+    width: 25%;
+    padding: 0px;
+    font-variant: small-caps;
+    font-size: 20px;
+    text-align: -webkit-center;
+}
+
 pre {
     margin-bottom: 1.5rem;
     font-size: x-large;
