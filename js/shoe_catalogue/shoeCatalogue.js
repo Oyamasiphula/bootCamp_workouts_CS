@@ -12,7 +12,7 @@ var shoes = [{
         price: 350,
         size: 4,
         in_stock: 5
-    },{
+    }, {
         brand: 'Puma',
         color: 'blue',
         price: 350,
@@ -25,15 +25,31 @@ var shoes = [{
         price: 275,
         size: 7,
         in_stock: 3
+    },
+    {
+        brand: 'Tissoni',
+        color: 'Brown',
+        price: 275,
+        size: 3,
+        in_stock: 17
+    },
+    {
+        brand: 'Lacoste',
+        color: 'Fashion blue',
+        price: 275,
+        size: 9,
+        in_stock: 1
     }
 ];
 
 
-(function() {
+var colorMap = {};
+var colorColl = [];
+var sizesColl = [];
+var stockColl = [];
+var organizedColorColl = [];
 
-  var colorColl = [];
-  var sizesColl = [];
-  var stockColl = [];
+(function() {
 
     for (var i = 0; i < shoes.length; i++) {
 
@@ -42,23 +58,33 @@ var shoes = [{
         var prices = shoes[i].price;
         var stock = shoes[i].in_stock;
 
-        if (shoes[i].color) {
-            colorColl.push(color);
+        if (color) {
+            colorColl.push(shoes[i].color);
         }
         if (shoes[i].size) {
             sizesColl.push(sizes);
         }
+        if (shoes[i].stock) {
+            stockColl.push(stock);
+        }
     }
+    for (var k = 0; k < colorColl.length; k++) {
+        if (organizedColorColl.indexOf(colorColl[k]) === -1) {
+            organizedColorColl.push(colorColl[k]);
+            console.log("This item already exists " + k);
+        }
+    }
+
     var sizeColorTempHelpersRes = Handlebars.compile(optionTemplate.innerHTML);
     var messageOutResHelperRes = Handlebars.compile(messageTemplate.innerHTML);
 
     var humanReadableSizeAndColorOutput = sizeColorTempHelpersRes({
-      color: colorColl,
-      sizes: sizesColl
+        color: organizedColorColl,
+        sizes: sizesColl
     });
 
     var humanReadableForm = messageOutResHelperRes({
-      NoOfShoesAvail: stockColl
+        NoOfShoesAvail: stockColl
     });
 
     dataListDivAsOutput.innerHTML = humanReadableSizeAndColorOutput;
@@ -90,6 +116,9 @@ var filterItems = function() {
         dataSearched: capturedData
     });
     searchResultsDiv.innerHTML = writeTableHelpersResult;
+    if (capturedData.length === 0) {
+
+    }
 }
 
 var searchButton = document.querySelector(".searchButton");
