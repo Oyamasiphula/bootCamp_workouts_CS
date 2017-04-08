@@ -43,7 +43,6 @@ var resetCounter = function(){
   count = 0;
   window.myStorage.setItem("count",count)
   document.querySelector("#totalNumOfGreetings").innerHTML = count;
-  console.log(myStorage.count);
 }
 okButton.addEventListener('click', getNameVal);
 resetButton.addEventListener('click', resetCounter);
