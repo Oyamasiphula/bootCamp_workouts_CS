@@ -7,43 +7,47 @@ var messageOut = document.querySelector("h4.messageOut");
 var dataSearchedTemplate = document.querySelector(".searchedDataSummary");
 
 var shoes = [{
-        brand: 'Nike',
-        color: 'blue',
-        price: 350,
+        brand: 'Lacoste',
+        color: 'white',
+        price: 1200,
         size: 4,
+        img: "lacoste_arrow_sportif.JPG",
         in_stock: 5
     }, {
-        brand: 'Puma',
-        color: 'blue',
-        price: 350,
-        size: 8,
+        brand: 'Lacoste',
+        color: 'white',
+        price: 800,
+        size: 6,
+        img: "lacoste_tommy.JPG",
         in_stock: 18
     },
     {
-        brand: 'Adidas',
-        color: 'orange',
-        price: 275,
+        brand: 'Nike',
+        color: 'brown',
+        price: 2300,
         size: 7,
+        img: "nike_sneaker_boot.JPG",
         in_stock: 3
     },
     {
-        brand: 'Tissoni',
-        color: 'Brown',
-        price: 275,
+        brand: 'Lacoste',
+        color: 'black',
+        price: 1350,
         size: 3,
+        img: "lacoste_challenger.JPG",
         in_stock: 17
     },
     {
         brand: 'Lacoste',
-        color: 'Fashion blue',
-        price: 275,
+        color: 'Fashion red',
+        price: 1800,
         size: 9,
+        img: "lacoste_driving_shoe.JPG",
         in_stock: 1
     }
 ];
 
 
-var colorMap = {};
 var colorColl = [];
 var sizesColl = [];
 var stockColl = [];
@@ -71,29 +75,20 @@ var organizedColorColl = [];
     for (var k = 0; k < colorColl.length; k++) {
         if (organizedColorColl.indexOf(colorColl[k]) === -1) {
             organizedColorColl.push(colorColl[k]);
-            console.log("This item already exists " + k);
+            // console.log("This item already exists " + k);
         }
     }
 
     var sizeColorTempHelpersRes = Handlebars.compile(optionTemplate.innerHTML);
-    var messageOutResHelperRes = Handlebars.compile(messageTemplate.innerHTML);
-
     var humanReadableSizeAndColorOutput = sizeColorTempHelpersRes({
         color: organizedColorColl,
         sizes: sizesColl
     });
-
-    var humanReadableForm = messageOutResHelperRes({
-        NoOfShoesAvail: stockColl
-    });
-
     dataListDivAsOutput.innerHTML = humanReadableSizeAndColorOutput;
-    messageDivAsOutput.innerHTML = humanReadableForm;
 })();
 
-
+var messageOutResHelperRes = Handlebars.compile(messageTemplate.innerHTML);
 var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
-
 var selectColorOpt = document.querySelector(".color");
 var selectSizeOpt = document.querySelector(".sizes");
 
@@ -112,13 +107,18 @@ var filterItems = function() {
             capturedData.push(shoes[i]);
         }
     }
-    var writeTableHelpersResult = tableResultTemplate({
+    var humanReadableForm = messageOutResHelperRes({
+        NoOfShoesAvail: stockColl
+    });
+    var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });
-    searchResultsDiv.innerHTML = writeTableHelpersResult;
-    if (capturedData.length === 0) {
-
+    if (capturedData === [] || capturedData.length === 0) {
+        return searchResultsDiv.innerHTML = "<h2 align='center'>Nothing Found!</h2>"
     }
+    searchResultsDiv.innerHTML = tableHelpersResult;
+    messageDivAsOutput.innerHTML = humanReadableForm;
+
 }
 
 var searchButton = document.querySelector(".searchButton");
