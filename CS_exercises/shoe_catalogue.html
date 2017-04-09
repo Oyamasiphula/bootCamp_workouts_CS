@@ -14,11 +14,10 @@
 </head>
 
 <body>
-  <div class="container">
+    <div class="container">
 
-    <h1 align="center">Shoe Catalogue</h1>
-
-    <script class="options" type="text/x-handlebars-template">
+        <h1 align="center">Shoe Catalogue</h1>
+        <script class="options" type="text/x-handlebars-template">
             <select class="color" name="">
               {{#each color}}
               <option value="{{this}}">{{this}}</option>
@@ -30,48 +29,45 @@
               <option value="{{this}}">{{this}}</option>
               {{/each}}
             </select>
+        </script>
 
-    </script>
+        <script class="message" type="text/x-handlebars-template">
+            {{#each NoOfShoesAvail}}
+            <h4 class="messageOut">We have {{this}} of shoes in stock.</h4> {{/each}}
+        </script>
 
-<script class="message" type="text/x-handlebars-template">
-  {{#each NoOfShoesAvail}}
-   <h4 class="messageOut">We have {{this}} of shoes in stock.</h4>
-  {{/each}}
-</script>
+        <script class="searchedDataSummary" type="text/x-handlebars-template">
+            <h2 align="center">Search Results</h2>
 
-<script class="message" type="text/x-handlebars-template">
-  {{#each NoOfShoesAvail}}
-   <h4 class="messageOut">We have {{this}} of shoes in stock.</h4>
-  {{/each}}
-</script>
-<script class="searchedDataSummary" type="text/x-handlebars-template">
-  <h2  align="center">Search Result</h2>
+            <div class="row" id="imageOut">
+                {{#each dataSearched}}
+                <img class="shoes" src="../images/shoes/{{this.img}}" alt="">
+                <br>
+                <p class="messageOut">We have <b>{{this.in_stock}}</b> <b>{{this.color}}</b> in stock.</p>
+                {{/each}}
+            </div>
 
-  <table id="searchDataTable" align="center">
-    <tr>
-      <th>Brand</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th>Price</th>
-  {{#each dataSearched}}
-    </tr>
-    <td>{{this.brand}}</td>
-    <td>{{this.color}}</td>
-    <td>{{this.size}}</td>
-    <td>{{this.price}}</td>
-  </tr>
-  {{/each}}
-</table>
-</script>
-    <div class="dataListContainer">
+            {{#each dataSearched}}
+            <div class="row">
+                <div class="messages">
+                    <p class="messageOut"><pre> <b>Brand</b> : {{this.brand}}</pre></p>
+                    <p class="messageOut"> <pre><b>Color</b> : {{this.color}}</pre></p>
+                    <p class="messageOut"> <pre><b>Size</b> : {{this.size}}</pre></p>
+                    <p class="messageOut"> <pre><b>Price</b> : R{{this.price}}</pre></p>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+        <div class="dataListContainer">
+        </div>
+        <div class="messageContainer">
+        </div>
+        <div class="searchResults">
+        </div>
+
+        <button class="searchButton" type="button" name="button">Search</button>
     </div>
-    <div class="messageContainer">
-    </div>
-    <div class="searchResults">
-    </div>
-
-    <button class="searchButton" type="button" name="button">Search</button>
-</div>
     <script src="../js/shoe_catalogue/shoeCatalogue.js" charset="utf-8"></script>
 </body>
+
 </html>
