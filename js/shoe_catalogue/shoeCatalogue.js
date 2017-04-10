@@ -51,27 +51,40 @@ var shoes = [{
 var colorColl = [];
 var sizesColl = [];
 var stockColl = [];
+var brandColl = [];
 var organizedColorColl = [];
+var organizedBrandColl = [];
 
 (function() {
 
     for (var i = 0; i < shoes.length; i++) {
 
+        var brands = shoes[i].brand;
         var color = shoes[i].color;
         var sizes = shoes[i].size;
         var prices = shoes[i].price;
         var stock = shoes[i].in_stock;
 
-        if (color) {
-            colorColl.push(shoes[i].color);
+        if (brands) {
+          brandColl.push(brands);
         }
-        if (shoes[i].size) {
+        if (color) {
+            colorColl.push(color);
+        }
+        if (sizes) {
             sizesColl.push(sizes);
         }
-        if (shoes[i].stock) {
+        if (stock) {
             stockColl.push(stock);
         }
     }
+    for (var x = 0; x < brandColl.length; x++) {
+
+      if(organizedBrandColl.indexOf(brandColl[x]) === -1){
+        organizedBrandColl.push(brandColl[x]);
+      }
+    }
+
     for (var k = 0; k < colorColl.length; k++) {
         if (organizedColorColl.indexOf(colorColl[k]) === -1) {
             organizedColorColl.push(colorColl[k]);
@@ -81,13 +94,13 @@ var organizedColorColl = [];
 
     var sizeColorTempHelpersRes = Handlebars.compile(optionTemplate.innerHTML);
     var humanReadableSizeAndColorOutput = sizeColorTempHelpersRes({
+        brands: organizedBrandColl,
         color: organizedColorColl,
         sizes: sizesColl
     });
     dataListDivAsOutput.innerHTML = humanReadableSizeAndColorOutput;
 })();
 
-var messageOutResHelperRes = Handlebars.compile(messageTemplate.innerHTML);
 var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
 var selectColorOpt = document.querySelector(".color");
 var selectSizeOpt = document.querySelector(".sizes");
@@ -107,18 +120,14 @@ var filterItems = function() {
             capturedData.push(shoes[i]);
         }
     }
-    var humanReadableForm = messageOutResHelperRes({
-        NoOfShoesAvail: stockColl
-    });
+    console.log(capturedData,capturedData.length);
     var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });
-    if (capturedData === [] || capturedData.length === 0) {
-        return searchResultsDiv.innerHTML = "<h2 align='center'>Nothing Found!</h2>"
+    if (capturedData.length === 0) {
+      return searchResultsDiv.innerHTML = "<h2 align='center'>Nothing Found!</h2>";
     }
     searchResultsDiv.innerHTML = tableHelpersResult;
-    messageDivAsOutput.innerHTML = humanReadableForm;
-
 }
 
 var searchButton = document.querySelector(".searchButton");
