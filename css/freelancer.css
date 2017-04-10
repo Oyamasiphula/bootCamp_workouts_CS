@@ -120,7 +120,6 @@ section {
     border-color: #33C3F0;
 }
 
-
 .messages {
     background: url(../images/beachcombers-top-a-background-fill.jpg);
     margin-right: auto;
@@ -135,11 +134,10 @@ section {
 }
 
 div.dataListContainer {
-  display: flex;
-  margin-top: 6em;
-  margin-bottom: inherit;
+    display: flex;
+    margin-top: 6em;
+    margin-bottom: inherit;
 }
-
 
 table, th, td {
     border: 2px solid black;
@@ -151,26 +149,30 @@ table, th, td {
 }
 
 pre {
-    margin-bottom: 1.5rem;
-    font-size: x-large;
+    margin-bottom: -0.5rem;
+    font-size: initial;
     background-color: rgba(0, 100, 0, 0.41);
     opacity: .8;
 }
+
 div #imageOut {
     margin-left: auto;
     margin-right: auto;
     display: table;
     position: relative;
 }
+
 img.shoes {
     border: 0;
     height: 20em;
     width: 25em;
 }
-p.messageOut ,pre{
+
+p.messageOut, pre {
     text-align: -webkit-center;
 }
-div.searchResults h2{
+
+div.searchResults h2 {
     font-style: oblique;
     text-decoration: underline;
 }
