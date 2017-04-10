@@ -18,6 +18,11 @@
 
         <h1 align="center">Shoe Catalogue</h1>
         <script class="options" type="text/x-handlebars-template">
+            <select class="brand" name="">
+              {{#each brands}}
+              <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
             <select class="color" name="">
               {{#each color}}
               <option value="{{this}}">{{this}}</option>
@@ -29,11 +34,6 @@
               <option value="{{this}}">{{this}}</option>
               {{/each}}
             </select>
-        </script>
-
-        <script class="message" type="text/x-handlebars-template">
-            {{#each NoOfShoesAvail}}
-            <h4 class="messageOut">We have {{this}} of shoes in stock.</h4> {{/each}}
         </script>
 
         <script class="searchedDataSummary" type="text/x-handlebars-template">
@@ -50,10 +50,10 @@
             {{#each dataSearched}}
             <div class="row">
                 <div class="messages">
-                    <p class="messageOut"><pre> <b>Brand</b> : {{this.brand}}</pre></p>
-                    <p class="messageOut"> <pre><b>Color</b> : {{this.color}}</pre></p>
-                    <p class="messageOut"> <pre><b>Size</b> : {{this.size}}</pre></p>
-                    <p class="messageOut"> <pre><b>Price</b> : R{{this.price}}</pre></p>
+                    <p class="messageOut"><pre><b>Brand</b> : {{this.brand}}</pre></p>
+                    <p class="messageOut"><pre><b>Color</b> : {{this.color}}</pre></p>
+                    <p class="messageOut"><pre><b>Size</b> : {{this.size}}</pre></p>
+                    <p class="messageOut"><pre><b>Price</b> : R{{this.price}}</pre></p>
                 </div>
             </div>
             {{/each}}
