@@ -39,6 +39,21 @@ var shoes = [{
     },
     {
         brand: 'Lacoste',
+        color: 'black',
+        price: 1350,
+        size: 3,
+        img: "lacoste_challenger.JPG",
+        in_stock: 17
+    },{
+        brand: 'Lacoste',
+        color: 'black',
+        price: 1350,
+        size: 3,
+        img: "lacoste_challenger.JPG",
+        in_stock: 17
+    },
+    {
+        brand: 'Lacoste',
         color: 'Fashion red',
         price: 1800,
         size: 9,
