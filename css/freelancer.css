@@ -155,7 +155,6 @@ pre {
     opacity: .8;
 }
 
-
 img.shoes {
     border: 0;
     height: 20em;
@@ -170,16 +169,32 @@ div.searchResults h2 {
     font-style: oblique;
     text-decoration: underline;
 }
+
 div #imageOut {
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-  position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    position: relative;
 }
+
+img.shoes {
+    border: 0;
+    height: 15em;
+    width: 16em;
+    border: 1px dashed black;
+}
+
 #div_top_hypers {
-    background-color:#eeeeee;
-    display:inline;
+    background-color: #eeeeee;
+    display: inline;
 }
-ul#ul_top_hypers li{
-  display: inline-block;
+
+ul#ul_top_hypers li {
+    display: inline-block;
+    background-color: #4855ae;
+    padding: 22px;
+    border-radius: 5px;
+}
+ul {
+  margin-bottom: 0;
 }
