@@ -44,7 +44,7 @@ var shoes = [{
         size: 3,
         img: "lacoste_challenger.JPG",
         in_stock: 17
-    },{
+    }, {
         brand: 'Lacoste',
         color: 'black',
         price: 1350,
@@ -68,6 +68,7 @@ var sizesColl = [];
 var stockColl = [];
 var brandColl = [];
 var organizedColorColl = [];
+var organizedSizeColl = [];
 var organizedBrandColl = [];
 
 (function() {
@@ -81,7 +82,7 @@ var organizedBrandColl = [];
         var stock = shoes[i].in_stock;
 
         if (brands) {
-          brandColl.push(brands);
+            brandColl.push(brands);
         }
         if (color) {
             colorColl.push(color);
@@ -94,10 +95,9 @@ var organizedBrandColl = [];
         }
     }
     for (var x = 0; x < brandColl.length; x++) {
-
-      if(organizedBrandColl.indexOf(brandColl[x]) === -1){
-        organizedBrandColl.push(brandColl[x]);
-      }
+        if (organizedBrandColl.indexOf(brandColl[x]) === -1) {
+            organizedBrandColl.push(brandColl[x]);
+        }
     }
 
     for (var k = 0; k < colorColl.length; k++) {
@@ -106,23 +106,33 @@ var organizedBrandColl = [];
             // console.log("This item already exists " + k);
         }
     }
-
+    for (var c = 0; c < sizesColl.length; c++) {
+        if (organizedSizeColl.indexOf(sizesColl[c]) === -1) {
+            organizedSizeColl.push(sizesColl[c]);
+        }
+    }
+    // here I'm sorting my values from lowest to highest before they get displayed on the browser
+    organizedSizeColl.sort(function(a, b) {
+        return a - b
+    })
     var sizeColorTempHelpersRes = Handlebars.compile(optionTemplate.innerHTML);
     var humanReadableSizeAndColorOutput = sizeColorTempHelpersRes({
         brands: organizedBrandColl,
         color: organizedColorColl,
-        sizes: sizesColl
+        sizes: organizedSizeColl
     });
     dataListDivAsOutput.innerHTML = humanReadableSizeAndColorOutput;
 })();
 
 var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
+var selectBrandOpt = document.querySelector(".brand");
 var selectColorOpt = document.querySelector(".color");
 var selectSizeOpt = document.querySelector(".sizes");
 
 var filterItems = function() {
     var capturedData = [];
 
+    let selectedBrandOpt = selectSizeOpt[selectSizeOpt.selectedIndex].value;
     let selectedColorOpt = selectColorOpt[selectColorOpt.selectedIndex].value;
     let selectedSizeOpt = selectSizeOpt[selectSizeOpt.selectedIndex].value;
 
@@ -131,16 +141,16 @@ var filterItems = function() {
         var brands = shoes[i].brand;
         var sizes = shoes[i].size;
 
-        if (selectedColorOpt === color && Number(selectedSizeOpt) === sizes) {
+        if (selectedBrandOpt === brands || Number(selectedSizeOpt) === sizes || selectedColorOpt === color) {
             capturedData.push(shoes[i]);
         }
     }
-    console.log(capturedData,capturedData.length);
+    console.log(capturedData, capturedData.length);
     var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });
     if (capturedData.length === 0) {
-      return searchResultsDiv.innerHTML = "<h2 align='center'>Nothing Found!</h2>";
+        return searchResultsDiv.innerHTML = "<h2 align='center'>Nothing Found!</h2>";
     }
     searchResultsDiv.innerHTML = tableHelpersResult;
 }
