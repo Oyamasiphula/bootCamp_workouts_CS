@@ -22,6 +22,10 @@ body {
     border-right-color: rgba(52, 66, 167, 0.88);
     position: relative;
 }
+#container {
+      position: initial;
+      background-size: contain;
+}
 
 .header {
     margin: 2em;

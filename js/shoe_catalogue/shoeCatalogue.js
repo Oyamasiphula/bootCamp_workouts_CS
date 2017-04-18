@@ -40,17 +40,17 @@ var shoes = [{
     {
         brand: 'Lacoste',
         color: 'black',
-        price: 1350,
-        size: 3,
-        img: "lacoste_challenger.JPG",
-        in_stock: 17
+        price: 2200,
+        size: 5,
+        img: "Lacoste_Shoes_Graduate.jpg",
+        in_stock: 4
     }, {
         brand: 'Lacoste',
-        color: 'black',
-        price: 1350,
-        size: 3,
-        img: "lacoste_challenger.JPG",
-        in_stock: 17
+        color: 'white',
+        price: 1800,
+        size: 5,
+        img: "lacoste_sleepon.JPG",
+        in_stock: 14
     },
     {
         brand: 'Lacoste',
@@ -59,6 +59,46 @@ var shoes = [{
         size: 9,
         img: "lacoste_driving_shoe.JPG",
         in_stock: 1
+    },
+    {
+        brand: 'Lacoste',
+        color: 'grey',
+        price: 1400,
+        size: 6,
+        img: "lacoste_sport_runner-G.JPG",
+        in_stock: 7
+    },
+    {
+        brand: 'Lacoste',
+        color: 'navy',
+        price: 1400,
+        size: 6,
+        img: "5376454398c560e89a09d41cab09a0e2_best.jpg",
+        in_stock: 7
+    },
+    {
+        brand: 'Lacoste',
+        color: 'brown',
+        price: 1800,
+        size: 7,
+        img: "000019517-lacoste-endliner-116-black-1.jpg",
+        in_stock: 2
+    },
+    {
+        brand: 'Lacoste',
+        color: 'white',
+        price: 1200,
+        size: 9,
+        img: "lacoste_sneakers_sport.JPG",
+        in_stock: 13
+    },
+    {
+        brand: 'Lacoste',
+        color: 'white',
+        price: 1250,
+        size: 10,
+        img: "lacoste-low-tops-sneakers-11147323SH.JPG",
+        in_stock: 5
     }
 ];
 
