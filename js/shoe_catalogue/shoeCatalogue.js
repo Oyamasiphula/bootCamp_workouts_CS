@@ -111,7 +111,7 @@ var organizedBrandColl = [];
             organizedSizeColl.push(sizesColl[c]);
         }
     }
-    // here I'm sorting my values from lowest to highest before they get displayed on the browser
+    // here I'm sorting my values from lowest to highest before they're displayed on the browser
     organizedSizeColl.sort(function(a, b) {
         return a - b
     })
