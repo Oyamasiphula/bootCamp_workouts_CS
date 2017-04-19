@@ -121,16 +121,10 @@ var organizedBrandColl = [];
         var prices = shoes[i].price;
         var stock = shoes[i].in_stock;
 
-        if (brands) {
+        if (brands && color && sizes && stock) {
             brandColl.push(brands);
-        }
-        if (color) {
             colorColl.push(color);
-        }
-        if (sizes) {
             sizesColl.push(sizes);
-        }
-        if (stock) {
             stockColl.push(stock);
         }
     }
@@ -172,7 +166,7 @@ var selectSizeOpt = document.querySelector(".sizes");
 var filterItems = function() {
     var capturedData = [];
 
-    let selectedBrandOpt = selectSizeOpt[selectSizeOpt.selectedIndex].value;
+    let selectedBrandOpt = selectSizeOpt[selectBrandOpt.selectedIndex].value;
     let selectedColorOpt = selectColorOpt[selectColorOpt.selectedIndex].value;
     let selectedSizeOpt = selectSizeOpt[selectSizeOpt.selectedIndex].value;
 
@@ -181,11 +175,14 @@ var filterItems = function() {
         var brands = shoes[i].brand;
         var sizes = shoes[i].size;
 
-        if (selectedBrandOpt === brands || Number(selectedSizeOpt) === sizes || selectedColorOpt === color) {
+        var brandSize = Number(selectedSizeOpt);
+
+        console.log(selectedBrandOpt === brands, brandSize === sizes, selectedColorOpt === color);
+
+        if (selectedBrandOpt === brands && Number(selectedSizeOpt) === sizes && selectedColorOpt === color) {
             capturedData.push(shoes[i]);
         }
-    }
-    console.log(capturedData, capturedData.length);
+      }
     var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });

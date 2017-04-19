@@ -13,14 +13,14 @@
 
 </head>
 
-<body >
+<body>
 
-      <div class="container" >
+    <div class="container">
+      <h1 align="center">Shoe Catalogue</h1>
         <div class="container">
-          <h1 align="center">Shoe Catalogue</h1>
-          <div id="container" align="center">
-            <img src="http://espacepro.citymalin.com/resources/images/lacoste(1).gif" alt="">
-          </div>
+            <div id="container" align="center">
+                <img src="http://espacepro.citymalin.com/resources/images/lacoste(1).gif" alt="">
+            </div>
         </div>
         <script class="options" type="text/x-handlebars-template">
             <select class="brand" name="">
@@ -30,6 +30,7 @@
               {{/each}}
             </select>
             <select class="color" name="">
+
               <option value="" selected="true" disabled>SELECT COLOUR</option>
 
               {{#each color}}
@@ -48,24 +49,24 @@
         <script class="searchedDataSummary" type="text/x-handlebars-template">
             <h2 align="center">Search Results</h2>
             <div class="row">
-          <div id="div_top_hypers">
-              <ul id="ul_top_hypers">
-                {{#each dataSearched}}
-              <li>
-              <div id="imageOut">
-                <img class="shoes" src="../images/shoes/{{this.img}}" alt="">
-              </div>
-              <p class="messageOut">We have <b>{{this.in_stock}}</b> <b>{{this.color}}</b> in stock.</p>
-                <div class="messages">
-                    <p class="messageOut"><pre><b>Brand</b> : {{this.brand}}</pre></p>
-                    <p class="messageOut"><pre><b>Color</b> : {{this.color}}</pre></p>
-                    <p class="messageOut"><pre><b>Size</b> : {{this.size}}</pre></p>
-                    <p class="messageOut"><pre><b>Price</b> : R{{this.price}}</pre></p>
+                <div id="div_top_hypers">
+                    <ul id="ul_top_hypers">
+                        {{#each dataSearched}}
+                        <li>
+                            <div id="imageOut">
+                                <img class="shoes" src="../images/shoes/{{this.img}}" alt="">
+                            </div>
+                            <p class="messageOut">We have <b>{{this.in_stock}}</b> <b>{{this.color}}</b> in stock.</p>
+                            <div class="messages">
+                                <p class="messageOut"><pre><b>Brand</b> : {{this.brand}}</pre></p>
+                                <p class="messageOut"><pre><b>Color</b> : {{this.color}}</pre></p>
+                                <p class="messageOut"><pre><b>Size</b> : {{this.size}}</pre></p>
+                                <p class="messageOut"><pre><b>Price</b> : R{{this.price}}</pre></p>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
                 </div>
-              </li>
-              {{/each}}
-              </ul>
-            </div>
             </div>
         </script>
         <div class="dataListContainer">
@@ -76,7 +77,7 @@
         <div class="searchResults">
         </div>
 
-      </div>
+    </div>
     <script src="../js/shoe_catalogue/shoeCatalogue.js" charset="utf-8"></script>
 </body>
 

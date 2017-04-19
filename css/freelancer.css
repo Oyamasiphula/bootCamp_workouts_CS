@@ -22,9 +22,10 @@ body {
     border-right-color: rgba(52, 66, 167, 0.88);
     position: relative;
 }
+
 #container {
-      position: initial;
-      background-size: contain;
+    position: initial;
+    background-size: contain;
 }
 
 .header {
@@ -199,6 +200,11 @@ ul#ul_top_hypers li {
     padding: 22px;
     border-radius: 5px;
 }
+
 ul {
-  margin-bottom: 0;
+    margin-bottom: 0;
+}
+
+select {
+    background-color: cornflowerblue;
 }
