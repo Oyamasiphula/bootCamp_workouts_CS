@@ -166,20 +166,19 @@ var selectSizeOpt = document.querySelector(".sizes");
 var filterItems = function() {
     var capturedData = [];
 
-    let selectedBrandOpt = selectSizeOpt[selectBrandOpt.selectedIndex].value;
-    let selectedColorOpt = selectColorOpt[selectColorOpt.selectedIndex].value;
-    let selectedSizeOpt = selectSizeOpt[selectSizeOpt.selectedIndex].value;
 
     for (var i = 0; i < shoes.length; i++) {
         var color = shoes[i].color;
         var brands = shoes[i].brand;
         var sizes = shoes[i].size;
 
-        var brandSize = Number(selectedSizeOpt);
 
-        console.log(selectedBrandOpt === brands, brandSize === sizes, selectedColorOpt === color);
+        let selectedBrandOpt = selectSizeOpt[selectBrandOpt.selectedIndex].value;
+        console.log(selectedBrandOpt);
+        let selectedColorOpt = selectColorOpt[selectColorOpt.selectedIndex].value;
+        let selectedSizeOpt = selectSizeOpt[selectSizeOpt.selectedIndex].value;
 
-        if (selectedBrandOpt === brands && Number(selectedSizeOpt) === sizes && selectedColorOpt === color) {
+        if (selectedBrandOpt === brands || Number(selectedSizeOpt) === sizes || selectedColorOpt === color) {
             capturedData.push(shoes[i]);
         }
       }
