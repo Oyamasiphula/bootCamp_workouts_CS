@@ -73,7 +73,7 @@ var shoes = [{
         color: 'navy',
         price: 1400,
         size: 6,
-        img: "5376454398c560e89a09d41cab09a0e2_best.jpg",
+        img: "jd_product_list.jpg",
         in_stock: 7
     },
     {
@@ -173,12 +173,12 @@ var filterItems = function() {
         var sizes = shoes[i].size;
 
 
-        let selectedBrandOpt = selectSizeOpt[selectBrandOpt.selectedIndex].value;
+        let selectedBrandOpt = selectBrandOpt[selectBrandOpt.selectedIndex].value;
         console.log(selectedBrandOpt);
         let selectedColorOpt = selectColorOpt[selectColorOpt.selectedIndex].value;
         let selectedSizeOpt = selectSizeOpt[selectSizeOpt.selectedIndex].value;
 
-        if (selectedBrandOpt === brands || Number(selectedSizeOpt) === sizes || selectedColorOpt === color) {
+        if (selectedColorOpt === color && Number(selectedSizeOpt) === sizes) {
             capturedData.push(shoes[i]);
         }
       }
