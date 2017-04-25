@@ -5,6 +5,8 @@ var messageDivAsOutput = document.querySelector(".messageContainer");
 var searchResultsDiv = document.querySelector(".searchResults");
 var messageOut = document.querySelector("h4.messageOut");
 var dataSearchedTemplate = document.querySelector(".searchedDataSummary");
+var searchButton = document.querySelector(".searchButton");
+var backButtonElement = document.querySelector("#backButton");
 
 var shoes = [{
         brand: 'Lacoste',
@@ -191,5 +193,9 @@ var filterItems = function() {
     searchResultsDiv.innerHTML = tableHelpersResult;
 }
 
-var searchButton = document.querySelector(".searchButton");
 searchButton.addEventListener("click", filterItems)
+var strLink = 'file:///home/oyama/projects/Codex_Repo/bootCamp_workouts_CS/index.html';
+var goBackToMain = function() {
+window.location.href = strLink;
+}
+backButton.addEventListener('click', goBackToMain);
