@@ -1,12 +1,19 @@
-var optionTemplate = document.querySelector(".options");
-var messageTemplate = document.querySelector(".message");
-var dataListDivAsOutput = document.querySelector(".dataListContainer");
-var messageDivAsOutput = document.querySelector(".messageContainer");
-var searchResultsDiv = document.querySelector(".searchResults");
-var messageOut = document.querySelector("h4.messageOut");
-var dataSearchedTemplate = document.querySelector(".searchedDataSummary");
-var searchButton = document.querySelector(".searchButton");
-var backButtonElement = document.querySelector("#backButton");
+var optionTemplate = document.querySelector(".options"),
+    messageTemplate = document.querySelector(".message"),
+    dataListDivAsOutput = document.querySelector(".dataListContainer"),
+    messageDivAsOutput = document.querySelector(".messageContainer"),
+    searchResultsDiv = document.querySelector(".searchResults"),
+    messageOut = document.querySelector("h4.messageOut"),
+    dataSearchedTemplate = document.querySelector(".searchedDataSummary"),
+    searchButton = document.querySelector(".searchButton"),
+    backButtonElement = document.querySelector("#backButton"),
+    brand = document.querySelector(".brand"),
+    color = document.querySelector(".color"),
+    price = document.querySelector(".price"),
+    size = document.querySelector(".size"),
+    img = document.querySelector(".img"),
+    in_stock = document.querySelector(".in_stock");
+
 
 var shoes = [{
         brand: 'Lacoste',
@@ -130,6 +137,7 @@ var organizedBrandColl = [];
             stockColl.push(stock);
         }
     }
+
     for (var x = 0; x < brandColl.length; x++) {
         if (organizedBrandColl.indexOf(brandColl[x]) === -1) {
             organizedBrandColl.push(brandColl[x]);
@@ -183,7 +191,7 @@ var filterItems = function() {
         if (selectedColorOpt === color && Number(selectedSizeOpt) === sizes) {
             capturedData.push(shoes[i]);
         }
-      }
+    }
     var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });
@@ -192,10 +200,23 @@ var filterItems = function() {
     }
     searchResultsDiv.innerHTML = tableHelpersResult;
 }
+var addstock = function() {
+
+    console.log(brand.value)
+    console.log(color.value)
+    console.log(price.value)
+    console.log(size.value)
+    console.log(img.value)
+    console.log(in_stock.value)
+
+
+}
+
+
 
 searchButton.addEventListener("click", filterItems)
 var strLink = 'file:///home/oyama/projects/Codex_Repo/bootCamp_workouts_CS/index.html';
 var goBackToMain = function() {
-window.location.href = strLink;
+    window.location.href = strLink;
 }
 backButton.addEventListener('click', goBackToMain);
