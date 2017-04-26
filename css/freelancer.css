@@ -208,6 +208,12 @@ ul {
 select {
     background-color: cornflowerblue;
 }
-.addShoes{
-display: none; 
+
+.addShoes {
+    display: none;
+}
+form{
+  text-align: -webkit-center;
+  background: cornflowerblue;
+  border: 10px dashed #4855ae;
 }
