@@ -7,6 +7,8 @@ var optionTemplate = document.querySelector(".options"),
     dataSearchedTemplate = document.querySelector(".searchedDataSummary"),
     searchButton = document.querySelector(".searchButton"),
     backButtonElement = document.querySelector("#backButton"),
+    addStockButtonEl = document.querySelector(".button-secondary"),
+    addStockForm = document.querySelector(".addShoes"),
     brand = document.querySelector(".brand"),
     color = document.querySelector(".color"),
     price = document.querySelector(".price"),
@@ -112,13 +114,13 @@ var shoes = [{
 ];
 
 
-var colorColl = [];
-var sizesColl = [];
-var stockColl = [];
-var brandColl = [];
-var organizedColorColl = [];
-var organizedSizeColl = [];
-var organizedBrandColl = [];
+var colorColl = [],
+    sizesColl = [],
+    stockColl = [],
+    brandColl = [],
+    organizedColorColl = [],
+    organizedSizeColl = [],
+    organizedBrandColl = [];
 
 (function() {
 
@@ -200,23 +202,22 @@ var filterItems = function() {
     }
     searchResultsDiv.innerHTML = tableHelpersResult;
 }
-var addstock = function() {
 
-    console.log(brand.value)
-    console.log(color.value)
-    console.log(price.value)
-    console.log(size.value)
-    console.log(img.value)
-    console.log(in_stock.value)
+var count = 1;
 
-
-}
-
-
-
+var showAddstock = function() {
+  console.log(count++);
+    if (count%2 === 0) {
+      addStockForm.classList.remove("addShoes");
+    }
+    else {
+      addStockForm.classList.add("addShoes");
+    };
+};
 searchButton.addEventListener("click", filterItems)
 var strLink = 'file:///home/oyama/projects/Codex_Repo/bootCamp_workouts_CS/index.html';
 var goBackToMain = function() {
     window.location.href = strLink;
 }
+addStockButtonEl.addEventListener("click",showAddstock);
 backButton.addEventListener('click', goBackToMain);
