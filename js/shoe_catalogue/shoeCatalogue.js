@@ -203,8 +203,8 @@ var filterItems = function() {
     searchResultsDiv.innerHTML = tableHelpersResult;
 }
 
-var count = 1;
 
+var count = 1;
 var showAddstock = function() {
   console.log(count++);
     if (count%2 === 0) {
@@ -214,6 +214,7 @@ var showAddstock = function() {
       addStockForm.classList.add("addShoes");
     };
 };
+
 searchButton.addEventListener("click", filterItems)
 var strLink = 'file:///home/oyama/projects/Codex_Repo/bootCamp_workouts_CS/index.html';
 var goBackToMain = function() {
