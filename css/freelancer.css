@@ -208,3 +208,6 @@ ul {
 select {
     background-color: cornflowerblue;
 }
+.addShoes{
+display: none; 
+}
