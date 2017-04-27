@@ -113,29 +113,28 @@ var shoes = [{
     }
 ];
 
-// (function(shoes, keyS) {
+(function() {
 
     var organizedShoePropColl = [],
         organizedShoePropMap = {};
 
-var createUniqList = function(list, keyS){
-
+var createUniqList = function(list, key){
+  // console.log(key);
     for (var i = 0; i < list.length; i++) {
-      console.log(list[i].keyS);
-        // var val = list[i].key;
+        var val = list[i][key];
         // console.log(val);
-        // if (organizedShoePropMap[key] === undefined) {
-            // organizedShoePropMap[key] = list;
-            // organizedShoePropColl.push({
-            //     name: val
-            // });
-        // }
+        if (organizedShoePropMap[key] === undefined) {
+            organizedShoePropMap[key] = val;
+            organizedShoePropColl.push({
+                name: val
+            });
+        }
     };
-    // console.log(organizedShoePropColl);
+    console.log(organizedShoePropColl);
     return organizedShoePropColl
 };
 
-    var colorColl = createUniqList(shoes, "color");
+    var colorColl = createUniqList(shoes, "brand");
     // console.log(colorColl);
         // sizesColl = createUniqList(shoes, "color"),
         // stockColl = createUniqList(shoes, "price"),
@@ -160,7 +159,7 @@ var createUniqList = function(list, keyS){
 //         sizes: organizedSizeColl
 //     });
 //     dataListDivAsOutput.innerHTML = humanReadableSizeAndColorOutput;
-// })();
+})();
 //
 // var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
 // var selectBrandOpt = document.querySelector(".brand");
