@@ -26,14 +26,14 @@
             <select class="brand" name="">
               <option value="" selected="true" disabled>SELECT BRAND</option>
               {{#each brands}}
-              <option value="{{this.valRef}}">{{this.valRef}}</option>
+              <option value="{{this.brand}}">{{this.brand}}</option>
               {{/each}}
             </select>
 
             <select class="color" name="">
               <option value="" selected="true" disabled>SELECT COLOUR</option>
               {{#each color}}
-              <option value="{{this.valRef}}">{{this.valRef}}</option>
+              <option value="{{this.color}}">{{this.color}}</option>
               {{/each}}
             </select>
 
@@ -41,7 +41,7 @@
             <select class="sizes" name="">
               <option value="" selected="true" disabled>SELECT SIZE</option>
               {{#each sizes}}
-              <option value="{{this.valRef}}">{{this.valRef}}</option>
+              <option value="{{this.size}}">{{this.size}}</option>
               {{/each}}
             </select>
         </script>
@@ -84,7 +84,12 @@
           <input placeholder="Img" class="img" type="text" name="img">
           <br>
           <input placeholder="In_stock" class="in_stock" type="text" name="in_stock">
-
+          <hr>
+          <div class="formButt">
+          <button type="button" name="button">cancel</button>
+          <br>
+          <button type="button" name="button">Submit</button>
+        </div>
         </form>
 
         <div class="dataListContainer">
@@ -96,7 +101,6 @@
         </div>
         <div class="searchResults">
         </div>
-
 
 
     </div>
