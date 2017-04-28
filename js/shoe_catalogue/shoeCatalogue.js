@@ -118,15 +118,19 @@ var shoes = [{
         var organizedShoePropColl = [],
             organizedShoePropMap = {};
         for (var i = 0; i < list.length; i++) {
-            var val = list[i][key];
+          var obj = list[i];
+
+            var val = obj[key];
+
             if (organizedShoePropMap[val] === undefined) {
                 organizedShoePropMap[val] = val;
                 organizedShoePropColl.push({
-                    valRef: val
+                    [key]: val
                 });
             }
         };
-        return organizedShoePropColl
+        console.log(organizedShoePropColl);
+        return organizedShoePropColl;
     };
 
     var organizedBrandColl = createUniqList(shoes, "brand"),
@@ -153,9 +157,9 @@ var selectColorOpt = document.querySelector(".color");
 var selectSizeOpt = document.querySelector(".sizes");
 
 var filterItems = function() {
-  console.log(selectBrandOpt.value);
     var capturedData = [];
 
+    console.log(selectBrandOpt.value);
 
     for (var i = 0; i < shoes.length; i++) {
         var color = shoes[i].color;
