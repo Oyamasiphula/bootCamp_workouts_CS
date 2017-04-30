@@ -118,7 +118,7 @@ var shoes = [{
         var organizedShoePropColl = [],
             organizedShoePropMap = {};
         for (var i = 0; i < list.length; i++) {
-          var obj = list[i];
+            var obj = list[i];
 
             var val = obj[key];
 
@@ -129,18 +129,16 @@ var shoes = [{
                 });
             }
         };
-        console.log(organizedShoePropColl);
+        // here I'm sorting my values from lowest to highest before they're displayed on the browser
+        organizedShoePropColl.sort(function(a, b) {
+            return a - b
+        })
         return organizedShoePropColl;
     };
 
     var organizedBrandColl = createUniqList(shoes, "brand"),
         organizedColorColl = createUniqList(shoes, "color"),
         organizedSizeColl = createUniqList(shoes, "size");
-
-    // here I'm sorting my values from lowest to highest before they're displayed on the browser
-    organizedSizeColl.sort(function(a, b) {
-        return a - b
-    })
 
     var sizeColorTempHelpersRes = Handlebars.compile(optionTemplate.innerHTML);
     var humanReadableSizeAndColorOutput = sizeColorTempHelpersRes({
@@ -191,8 +189,10 @@ var showAddstock = function() {
     console.log(count++);
     if (count % 2 === 0) {
         addStockForm.classList.remove("addShoes");
+        dataListDivAsOutput.classList.add("hide_cont");
     } else {
         addStockForm.classList.add("addShoes");
+
     };
 };
 
