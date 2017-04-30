@@ -124,6 +124,28 @@ section {
     background-color: #402222;
     border-color: #33C3F0;
 }
+.formButt {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+}
+button.Submit {
+float: right;
+}
+button.cancel {
+  float: left;
+  background-color: #e6e6e6;
+}
+button.Submit:hover {
+    color: #FFF;
+    background-color: #11882a;
+    border-color: #6495ed;
+}
+button.cancel:hover {
+    color: #080808;
+    background-color: #ce6161;
+    border-color: rgb(245, 45, 45);
+}
 
 .messages {
     background: url(../images/beachcombers-top-a-background-fill.jpg);
@@ -212,8 +234,13 @@ select {
 .addShoes {
     display: none;
 }
-form{
-  text-align: -webkit-center;
-  background: cornflowerblue;
-  border: 10px dashed #4855ae;
+
+form {
+    text-align: -webkit-center;
+    background: cornflowerblue;
+    border: 10px dashed #4855ae;
+}
+
+.hide_cont {
+    display: none;
 }
