@@ -165,10 +165,10 @@ var filterItems = function() {
         var sizes = shoes[i].size;
 
 
-        let selectedBrandOpt = selectBrandOpt[selectBrandOpt.selectedIndex].value;
+        let selectedBrandOpt = selectBrandOpt.value;
         console.log(selectedBrandOpt);
-        let selectedColorOpt = selectColorOpt[selectColorOpt.selectedIndex].value;
-        let selectedSizeOpt = selectSizeOpt[selectSizeOpt.selectedIndex].value;
+        let selectedColorOpt = selectColorOpt.value;
+        let selectedSizeOpt = selectSizeOpt.value;
 
         if (selectedColorOpt === color && Number(selectedSizeOpt) === sizes) {
             capturedData.push(shoes[i]);
