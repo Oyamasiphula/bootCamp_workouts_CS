@@ -129,12 +129,17 @@ section {
   margin-right: auto;
   margin-left: auto;
 }
-button.Submit {
-float: right;
+  button.Submit {
+  float: right;
+  margin-left: auto;
+  background-color: #fefcfd;
+  margin-right: auto;
 }
 button.cancel {
   float: left;
+  margin: auto;
   background-color: #e6e6e6;
+  margin-bottom: 3em;
 }
 button.Submit:hover {
     color: #FFF;
