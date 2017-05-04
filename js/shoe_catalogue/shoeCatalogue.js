@@ -16,7 +16,6 @@ var optionTemplate = document.querySelector(".options"),
     img = document.querySelector(".img"),
     in_stock = document.querySelector(".in_stock");
 
-
 var shoes = [{
         brand: 'Lacoste',
         color: 'white',
@@ -119,7 +118,6 @@ var shoes = [{
             organizedShoePropMap = {};
         for (var i = 0; i < list.length; i++) {
             var obj = list[i];
-
             var val = obj[key];
 
             if (organizedShoePropMap[val] === undefined) {
@@ -150,14 +148,17 @@ var shoes = [{
 })();
 
 var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
-var selectBrandOpt = document.querySelector(".brand");
-var selectColorOpt = document.querySelector(".color");
-var selectSizeOpt = document.querySelector(".sizes");
+
+var selectBrandOpt = document.querySelector(".brandOptions");
+var selectColorOpt = document.querySelector(".colorOptions");
+var selectSizeOpt = document.querySelector(".sizesOptions");
 
 var filterItems = function() {
     var capturedData = [];
 
-    console.log(selectBrandOpt.value);
+   selectedBrandOpt = selectBrandOpt.value;
+   selectedColorOpt = selectColorOpt.value;
+   selectedSizeOpt = selectSizeOpt.value;
 
     for (var i = 0; i < shoes.length; i++) {
         var color = shoes[i].color;
@@ -165,10 +166,6 @@ var filterItems = function() {
         var sizes = shoes[i].size;
 
 
-        let selectedBrandOpt = selectBrandOpt.value;
-        console.log(selectedBrandOpt);
-        let selectedColorOpt = selectColorOpt.value;
-        let selectedSizeOpt = selectSizeOpt.value;
 
         if (selectedColorOpt === color && Number(selectedSizeOpt) === sizes) {
             capturedData.push(shoes[i]);
@@ -197,7 +194,7 @@ var showAddstock = function() {
 };
 
 searchButton.addEventListener("click", filterItems)
-var strLink = 'file:///home/oyama/projects/Codex_Repo/bootCamp_workouts_CS/index.html';
+var strLink = '/index.html';
 var goBackToMain = function() {
     window.location.href = strLink;
 }
