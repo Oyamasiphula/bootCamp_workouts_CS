@@ -129,6 +129,10 @@ section {
   margin-right: auto;
   margin-left: auto;
 }
+div.container form input{
+  text-align: center;
+}
+
   button.Submit {
   float: right;
   margin-left: auto;
