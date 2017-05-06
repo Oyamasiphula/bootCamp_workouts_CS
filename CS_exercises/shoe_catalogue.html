@@ -24,14 +24,14 @@
         </div>
         <script class="options" type="text/x-handlebars-template">
             <select class="brandOptions" name="">
-              <option value="" selected="true" disabled>SELECT BRAND</option>
+              <option class="placeHolder" value="" selected="true" disabled>SELECT BRAND</option>
               {{#each brands}}
               <option value="{{this.brand}}">{{this.brand}}</option>
               {{/each}}
             </select>
 
             <select class="colorOptions" name="">
-              <option value="" selected="true" disabled>SELECT COLOUR</option>
+              <option  class="placeHolder" value="" selected="true" disabled>SELECT COLOUR</option>
               {{#each color}}
               <option value="{{this.color}}">{{this.color}}</option>
               {{/each}}
@@ -39,7 +39,7 @@
 
             <br>
             <select class="sizesOptions" name="">
-              <option value="" selected="true" disabled>SELECT SIZE</option>
+              <option class="placeHolder" value="" selected="true" disabled>SELECT SIZE</option>
               {{#each sizes}}
               <option value="{{this.size}}">{{this.size}}</option>
               {{/each}}
@@ -99,9 +99,11 @@
 
         <div class="messageContainer">
         </div>
-        <div class="searchResults">
-        </div>
-
+          <div class="searchResults hide_cont showResults">
+            <h2>Nothing Found!</h2>
+            <br>
+            <img src='http://www.footprint360.com/media/wysiwyg/no-result-found.jpg'>
+          </div>
 
     </div>
     <script src="../js/shoe_catalogue/shoeCatalogue.js" charset="utf-8"></script>
