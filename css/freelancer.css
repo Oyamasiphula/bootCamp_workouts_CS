@@ -124,32 +124,37 @@ section {
     background-color: #402222;
     border-color: #33C3F0;
 }
+
 .formButt {
-  display: flex;
-  margin-right: auto;
-  margin-left: auto;
-}
-div.container form input{
-  text-align: center;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-  button.Submit {
-  float: right;
-  margin-left: auto;
-  background-color: #fefcfd;
-  margin-right: auto;
+div.container form input {
+    text-align: center;
 }
+
+button.Submit {
+    float: right;
+    margin-left: auto;
+    background-color: #fefcfd;
+    margin-right: auto;
+}
+
 button.cancel {
-  float: left;
-  margin: auto;
-  background-color: #e6e6e6;
-  margin-bottom: 3em;
+    float: left;
+    margin: auto;
+    background-color: #e6e6e6;
+    margin-bottom: 3em;
 }
+
 button.Submit:hover {
     color: #FFF;
     background-color: #11882a;
     border-color: #6495ed;
 }
+
 button.cancel:hover {
     color: #080808;
     background-color: #ce6161;
@@ -174,7 +179,10 @@ div.dataListContainer {
     margin-top: 6em;
     margin-bottom: inherit;
 }
-
+.placeHolder{
+    color: white;
+    background-color: #11882a;
+}
 table, th, td {
     border: 2px solid black;
     width: 25%;
@@ -252,4 +260,9 @@ form {
 
 .hide_cont {
     display: none;
+}
+
+.showResults {
+    text-align: center;
+    display: block;
 }
