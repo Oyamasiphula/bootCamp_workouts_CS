@@ -27,7 +27,7 @@ var shoes = [{
         brand: 'Lacoste',
         color: 'white',
         price: 800,
-        size: 6,
+        size: 9,
         img: "lacoste_tommy.JPG",
         in_stock: 18
     },
@@ -106,7 +106,7 @@ var shoes = [{
         brand: 'Lacoste',
         color: 'white',
         price: 1250,
-        size: 10,
+        size: 9,
         img: "lacoste-low-tops-sneakers-11147323SH.JPG",
         in_stock: 5
     }
@@ -128,9 +128,21 @@ var shoes = [{
             }
         };
         // here I'm sorting my values from lowest to highest before they're displayed on the browser
-        organizedShoePropColl.sort(function(a, b) {
-            return a - b
+        function organizeVals() {
+        organizedShoePropColl.forEach(function(obj){
+            console.log(obj);
+
         })
+        organizeVals();
+          // for (var key in object) {
+          //   if (object.hasOwnProperty(key)) {
+          //
+          //   }
+          // }
+          organizedShoePropColl.sort(function(a, b) {
+            return a - b
+          })
+        }
         return organizedShoePropColl;
     };
 
@@ -152,6 +164,7 @@ var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
 var selectBrandOpt = document.querySelector(".brandOptions");
 var selectColorOpt = document.querySelector(".colorOptions");
 var selectSizeOpt = document.querySelector(".sizesOptions");
+var nothingIsFound = document.querySelector(".searchResults,div .hide_cont");
 
 var filterItems = function() {
     var capturedData = [];
@@ -160,12 +173,11 @@ var filterItems = function() {
    selectedColorOpt = selectColorOpt.value;
    selectedSizeOpt = selectSizeOpt.value;
 
+
     for (var i = 0; i < shoes.length; i++) {
         var color = shoes[i].color;
         var brands = shoes[i].brand;
         var sizes = shoes[i].size;
-
-
 
         if (selectedColorOpt === color && Number(selectedSizeOpt) === sizes) {
             capturedData.push(shoes[i]);
@@ -175,22 +187,16 @@ var filterItems = function() {
         dataSearched: capturedData
     });
     if (capturedData.length === 0) {
-        return searchResultsDiv.innerHTML = "<h2 align='center'>Nothing Found!</h2>";
+      console.log("-------------------",capturedData);
+            nothingIsFound.classList.remove("hide_cont");
     }
     searchResultsDiv.innerHTML = tableHelpersResult;
 }
 
-
 var count = 1;
-var showAddstock = function() {
-    console.log(count++);
-    if (count % 2 === 0) {
-        addStockForm.classList.remove("addShoes");
-        dataListDivAsOutput.classList.add("hide_cont");
-    } else {
-        addStockForm.classList.add("addShoes");
 
-    };
+var showAddstock = function() {
+  addStockForm.classList.toggle("addShoes");
 };
 
 searchButton.addEventListener("click", filterItems)
