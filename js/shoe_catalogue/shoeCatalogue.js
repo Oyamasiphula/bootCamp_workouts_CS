@@ -9,6 +9,8 @@ var optionTemplate = document.querySelector(".options"),
     backButtonElement = document.querySelector("#backButton"),
     addStockButtonEl = document.querySelector(".button-secondary"),
     addStockForm = document.querySelector(".addShoes"),
+    hideAddStockFormButtEl = document.querySelector(".cancel"),
+    SubmAddStockFormButt = document.querySelector(".Submit"),
     brand = document.querySelector(".brand"),
     color = document.querySelector(".color"),
     price = document.querySelector(".price"),
@@ -193,16 +195,19 @@ var filterItems = function() {
     searchResultsDiv.innerHTML = tableHelpersResult;
 }
 
-var count = 1;
-
 var showAddstock = function() {
   addStockForm.classList.toggle("addShoes");
 };
+var addStock = function(){
 
-searchButton.addEventListener("click", filterItems)
+}
 var strLink = '/index.html';
+
 var goBackToMain = function() {
     window.location.href = strLink;
 }
-addStockButtonEl.addEventListener("click", showAddstock);
+SubmAddStockFormButt.addEventListener('click', addStock);
 backButton.addEventListener('click', goBackToMain);
+searchButton.addEventListener("click", filterItems)
+addStockButtonEl.addEventListener("click", showAddstock);
+hideAddStockFormButtEl.addEventListener("click", showAddstock);
