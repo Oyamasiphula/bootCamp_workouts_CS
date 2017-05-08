@@ -115,8 +115,9 @@ section {
 
 #resetButton {
     color: #f50101;
-    float: right;
     background-color: #5fc74d;
+    margin-top: 2em;
+    float: inherit;
 }
 
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
@@ -174,15 +175,21 @@ button.cancel:hover {
     display: block;
 }
 
+div.row div.row {
+    margin-top: 2em;
+}
+
 div.dataListContainer {
     display: flex;
     margin-top: 6em;
     margin-bottom: inherit;
 }
-.placeHolder{
+
+.placeHolder {
     color: white;
     background-color: #11882a;
 }
+
 table, th, td {
     border: 2px solid black;
     width: 25%;
