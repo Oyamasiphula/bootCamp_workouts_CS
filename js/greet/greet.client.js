@@ -29,7 +29,7 @@ var getNameVal = function() {
         document.getElementById('speciedNameDisplay').innerHTML = greet(selectedLanguage, getName(name));
         count++;
         myStorage.setItem("count", count);
-        document.querySelector("#totalNumOfGreetings").innerHTML = count;
+        document.querySelector("#totalNumOfGreetings").innerHTML = "You have been greeted " + count + " Times";
         nameFieldInput.value = '';
     }
 };
