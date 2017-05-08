@@ -129,24 +129,6 @@ var shoes = [{
                 });
             }
         };
-        // here I'm sorting my values from lowest to highest before they're displayed on the browser
-        function organizeVals() {
-        organizedShoePropColl.forEach(function(obj){
-            console.log(obj);
-
-        })
-        organizeVals();
-          // for (var key in object) {
-          //   if (object.hasOwnProperty(key)) {
-          //
-          //   }
-          // }
-          organizedShoePropColl.sort(function(a, b) {
-            return a - b
-          })
-        }
-        return organizedShoePropColl;
-    };
 
     var organizedBrandColl = createUniqList(shoes, "brand"),
         organizedColorColl = createUniqList(shoes, "color"),
@@ -161,7 +143,7 @@ var shoes = [{
     dataListDivAsOutput.innerHTML = humanReadableSizeAndColorOutput;
 })();
 
-var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
+// var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
 
 var selectBrandOpt = document.querySelector(".brandOptions");
 var selectColorOpt = document.querySelector(".colorOptions");
@@ -190,7 +172,7 @@ var filterItems = function() {
     });
     if (capturedData.length === 0) {
       console.log("-------------------",capturedData);
-            nothingIsFound.classList.remove("hide_cont");
+      searchResultsDiv.classList.add("showResults");
     }
     searchResultsDiv.innerHTML = tableHelpersResult;
 }
