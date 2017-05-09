@@ -115,9 +115,11 @@ var shoes = [{
 ];
 
 (function() {
+
     var createUniqList = function(list, key) {
         var organizedShoePropColl = [],
             organizedShoePropMap = {};
+
         for (var i = 0; i < list.length; i++) {
             var obj = list[i];
             var val = obj[key];
@@ -129,7 +131,8 @@ var shoes = [{
                 });
             }
         };
-
+        return organizedShoePropColl;
+    }
     var organizedBrandColl = createUniqList(shoes, "brand"),
         organizedColorColl = createUniqList(shoes, "color"),
         organizedSizeColl = createUniqList(shoes, "size");
@@ -143,19 +146,18 @@ var shoes = [{
     dataListDivAsOutput.innerHTML = humanReadableSizeAndColorOutput;
 })();
 
-// var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
-
+var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
 var selectBrandOpt = document.querySelector(".brandOptions");
 var selectColorOpt = document.querySelector(".colorOptions");
 var selectSizeOpt = document.querySelector(".sizesOptions");
-var nothingIsFound = document.querySelector(".searchResults,div .hide_cont");
+var nothingIsFound = document.querySelector(".no_match");
 
 var filterItems = function() {
     var capturedData = [];
 
-   selectedBrandOpt = selectBrandOpt.value;
-   selectedColorOpt = selectColorOpt.value;
-   selectedSizeOpt = selectSizeOpt.value;
+    selectedBrandOpt = selectBrandOpt.value;
+    selectedColorOpt = selectColorOpt.value;
+    selectedSizeOpt = selectSizeOpt.value;
 
 
     for (var i = 0; i < shoes.length; i++) {
@@ -170,17 +172,22 @@ var filterItems = function() {
     var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });
-    if (capturedData.length === 0) {
-      console.log("-------------------",capturedData);
-      searchResultsDiv.classList.add("showResults");
+
+    if (capturedData.length > 0) {
+      console.log("-------------------", capturedData);
+        searchResultsDiv.innerHTML = tableHelpersResult;
+        nothingIsFound.classList.add("showResults");
     }
-    searchResultsDiv.innerHTML = tableHelpersResult;
+    if (capturedData.length === 0) {
+        console.log("-------------------", capturedData);
+      return  nothingIsFound.classList.add("showResults");
+    }
 }
 
 var showAddstock = function() {
-  addStockForm.classList.toggle("addShoes");
+    addStockForm.classList.toggle("addShoes");
 };
-var addStock = function(){
+var addStock = function() {
 
 }
 var strLink = '/index.html';
