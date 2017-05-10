@@ -28,6 +28,13 @@ body {
     background-size: contain;
 }
 
+div.container div.container img {
+    border: 0;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
 .header {
     margin: 2em;
     position: fixed;
@@ -134,9 +141,20 @@ section {
 
 div.container form input {
     text-align: center;
+    margin: auto;
+    display: block;
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    margin-left: auto;
+    width: 30%;
 }
 
-button.Submit {
+button.submit {
     float: right;
     margin-left: auto;
     background-color: #fefcfd;
@@ -150,7 +168,7 @@ button.cancel {
     margin-bottom: 3em;
 }
 
-button.Submit:hover {
+button.submit:hover {
     color: #FFF;
     background-color: #11882a;
     border-color: #6495ed;
