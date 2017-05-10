@@ -73,22 +73,22 @@
 
         <form class="addShoes">
             <br>
-            <input placeholder="Brand" class="brand" type="text" name="brand">
+            <input placeholder="Brand" class="brand" type="text" name="brand" required >
             <br>
-            <input placeholder="Color" class="color" type="text" name="color">
+            <input placeholder="Color" class="color" type="text" name="color" required>
             <br>
-            <input placeholder="Price" class="price" type="text" name="price">
+            <input placeholder="Price" class="price" type="text" name="price" required>
             <br>
-            <input placeholder="Size" class="size" type="text" name="size">
+            <input placeholder="Size" class="size" type="text" name="size" required>
             <br>
-            <input placeholder="Img" class="img" type="text" name="img">
+            <input placeholder="Img" class="img" type="file" id="filetag" required>
             <br>
-            <input placeholder="In_stock" class="in_stock" type="text" name="in_stock">
+            <input placeholder="In_stock" class="in_stock" type="text" name="in_stock" required>
             <hr>
             <div class="formButt">
                 <button class="cancel" type="button" name="button" data-hide="hideFor">cancel</button>
                 <br>
-                <button class="Submit" type="button" name="button">Submit</button>
+                <button class="submit" type="submit" name="button">Submit</button>
             </div>
         </form>
 
@@ -99,10 +99,12 @@
 
         <div class="messageContainer">
         </div>
-        <div  class="searchResults showResults">
+        <div class="">
+
             <h2 align="center">Search Results</h2>
-            <br>
-            <div class="hide_cont no_match ">
+            <div class="searchResults">
+            </div>
+            <div class="no_match">
                 <br>
                 <img src='http://www.footprint360.com/media/wysiwyg/no-result-found.jpg'>
             </div>
