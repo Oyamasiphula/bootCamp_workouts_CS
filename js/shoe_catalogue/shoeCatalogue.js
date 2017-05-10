@@ -10,13 +10,26 @@ var optionTemplate = document.querySelector(".options"),
     addStockButtonEl = document.querySelector(".button-secondary"),
     addStockForm = document.querySelector(".addShoes"),
     hideAddStockFormButtEl = document.querySelector(".cancel"),
-    SubmAddStockFormButt = document.querySelector(".Submit"),
+    SubmAddStockFormButt = document.querySelector(".submit"),
     brand = document.querySelector(".brand"),
     color = document.querySelector(".color"),
     price = document.querySelector(".price"),
     size = document.querySelector(".size"),
     img = document.querySelector(".img"),
-    in_stock = document.querySelector(".in_stock");
+    in_stock = document.querySelector(".in_stock"),
+    nothingIsFound = document.querySelector(".no_match");
+
+var addStock = function(shoes) {
+    shoes.push({
+        brand: brand.value,
+        color: color.value,
+        price: Number(price.value),
+        size: Number(size.value),
+        img: img.value,
+        in_stock: Number(in_stock.value)
+    });
+    return shoes
+}
 
 var shoes = [{
         brand: 'Lacoste',
@@ -114,7 +127,8 @@ var shoes = [{
     }
 ];
 
-(function() {
+var newList = shoes;
+function onBrowserLoadEl() {
 
     var createUniqList = function(list, key) {
         var organizedShoePropColl = [],
@@ -133,9 +147,9 @@ var shoes = [{
         };
         return organizedShoePropColl;
     }
-    var organizedBrandColl = createUniqList(shoes, "brand"),
-        organizedColorColl = createUniqList(shoes, "color"),
-        organizedSizeColl = createUniqList(shoes, "size");
+    var organizedBrandColl = createUniqList(newList, "brand"),
+        organizedColorColl = createUniqList(newList, "color"),
+        organizedSizeColl = createUniqList(newList, "size");
 
     var sizeColorTempHelpersRes = Handlebars.compile(optionTemplate.innerHTML);
     var humanReadableSizeAndColorOutput = sizeColorTempHelpersRes({
@@ -144,13 +158,16 @@ var shoes = [{
         sizes: organizedSizeColl
     });
     dataListDivAsOutput.innerHTML = humanReadableSizeAndColorOutput;
-})();
+}
+onBrowserLoadEl();
+
 
 var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
 var selectBrandOpt = document.querySelector(".brandOptions");
 var selectColorOpt = document.querySelector(".colorOptions");
 var selectSizeOpt = document.querySelector(".sizesOptions");
-var nothingIsFound = document.querySelector(".no_match");
+
+nothingIsFound.classList.add("hide_cont");
 
 var filterItems = function() {
     var capturedData = [];
@@ -160,43 +177,41 @@ var filterItems = function() {
     selectedSizeOpt = selectSizeOpt.value;
 
 
-    for (var i = 0; i < shoes.length; i++) {
-        var color = shoes[i].color;
-        var brands = shoes[i].brand;
-        var sizes = shoes[i].size;
+    for (var i = 0; i < newList.length; i++) {
+        var color = newList[i].color;
+        var brands = newList[i].brand;
+        var sizes = newList[i].size;
 
         if (selectedColorOpt === color && Number(selectedSizeOpt) === sizes) {
-            capturedData.push(shoes[i]);
+            capturedData.push(newList[i]);
         }
     }
     var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });
-
-    if (capturedData.length > 0) {
-      console.log("-------------------", capturedData);
-        searchResultsDiv.innerHTML = tableHelpersResult;
-        nothingIsFound.classList.add("showResults");
-    }
     if (capturedData.length === 0) {
         console.log("-------------------", capturedData);
-      return  nothingIsFound.classList.add("showResults");
+        nothingIsFound.classList.add("showResults");
     }
+    searchResultsDiv.innerHTML = tableHelpersResult;
 }
 
 var showAddstock = function() {
     addStockForm.classList.toggle("addShoes");
 };
-var addStock = function() {
 
-}
 var strLink = '/index.html';
 
 var goBackToMain = function() {
     window.location.href = strLink;
 }
-SubmAddStockFormButt.addEventListener('click', addStock);
 backButton.addEventListener('click', goBackToMain);
 searchButton.addEventListener("click", filterItems)
 addStockButtonEl.addEventListener("click", showAddstock);
 hideAddStockFormButtEl.addEventListener("click", showAddstock);
+SubmAddStockFormButt.addEventListener('click', function(e) {
+    e.preventDefault();
+    addStock(shoes)
+    addStockForm.classList.toggle("addShoes");
+    onBrowserLoadEl();
+});
