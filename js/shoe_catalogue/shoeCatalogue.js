@@ -3,6 +3,7 @@ var optionTemplate = document.querySelector(".options"),
     dataListDivAsOutput = document.querySelector(".dataListContainer"),
     messageDivAsOutput = document.querySelector(".messageContainer"),
     searchResultsDiv = document.querySelector(".searchResults"),
+    searchResultTitle = document.querySelector("h2.hide_cont"),
     messageOut = document.querySelector("h4.messageOut"),
     dataSearchedTemplate = document.querySelector(".searchedDataSummary"),
     searchButton = document.querySelector(".searchButton"),
@@ -16,9 +17,9 @@ var optionTemplate = document.querySelector(".options"),
     price = document.querySelector(".price"),
     size = document.querySelector(".size"),
     img = document.querySelector(".img"),
-    in_stock = document.querySelector(".in_stock"),
-    nothingIsFound = document.querySelector(".no_match");
+    in_stock = document.querySelector(".in_stock");
 
+ console.log(searchResultTitle);
 var addStock = function(shoes) {
     shoes.push({
         brand: brand.value,
@@ -166,9 +167,6 @@ var tableResultTemplate = Handlebars.compile(dataSearchedTemplate.innerHTML);
 var selectBrandOpt = document.querySelector(".brandOptions");
 var selectColorOpt = document.querySelector(".colorOptions");
 var selectSizeOpt = document.querySelector(".sizesOptions");
-
-nothingIsFound.classList.add("hide_cont");
-
 var filterItems = function() {
     var capturedData = [];
 
@@ -189,11 +187,15 @@ var filterItems = function() {
     var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });
-    if (capturedData.length === 0) {
-        console.log("-------------------", capturedData);
-        nothingIsFound.classList.add("showResults");
+    if (capturedData.length === 0 || capturedData.length < 1) {
+        searchResultTitle.classList.remove("hide_cont");
+        searchResultsDiv.classList.add("showResults");
+        searchResultsDiv.innerHTML = "<img src='http://www.footprint360.com/media/wysiwyg/no-result-found.jpg'>";
     }
-    searchResultsDiv.innerHTML = tableHelpersResult;
+    else {
+      searchResultTitle.classList.remove("hide_cont");
+      searchResultsDiv.innerHTML = tableHelpersResult;
+    }
 }
 
 var showAddstock = function() {
