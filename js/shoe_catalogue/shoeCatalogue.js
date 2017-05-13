@@ -3,10 +3,13 @@ var optionTemplate = document.querySelector(".options"),
     dataListDivAsOutput = document.querySelector(".dataListContainer"),
     messageDivAsOutput = document.querySelector(".messageContainer"),
     searchResultsDiv = document.querySelector(".searchResults"),
+    allInStockDisplayDiv = document.querySelector(".displayAllInStock"),
+    allInStockTitle = document.querySelector("h2.allInStockTitle"),
     searchResultTitle = document.querySelector("h2.hide_cont"),
     messageOut = document.querySelector("h4.messageOut"),
     dataSearchedTemplate = document.querySelector(".searchedDataSummary"),
     searchButton = document.querySelector(".searchButton"),
+    allInStockButton = document.querySelector(".showAllInStock"),
     backButtonElement = document.querySelector("#backButton"),
     addStockButtonEl = document.querySelector(".button-secondary"),
     addStockForm = document.querySelector(".addShoes"),
@@ -19,7 +22,6 @@ var optionTemplate = document.querySelector(".options"),
     img = document.querySelector(".img"),
     in_stock = document.querySelector(".in_stock");
 
- console.log(searchResultTitle);
 var addStock = function(shoes) {
     shoes.push({
         brand: brand.value,
@@ -127,10 +129,9 @@ var shoes = [{
         in_stock: 5
     }
 ];
-
 var newList = shoes;
-function onBrowserLoadEl() {
 
+function onBrowserLoadEl() {
     var createUniqList = function(list, key) {
         var organizedShoePropColl = [],
             organizedShoePropMap = {};
@@ -187,14 +188,18 @@ var filterItems = function() {
     var tableHelpersResult = tableResultTemplate({
         dataSearched: capturedData
     });
+    allInStockTitle.classList.add("hide_cont");
+    allInStockDisplayDiv.classList.add("hide_cont")
+
     if (capturedData.length === 0 || capturedData.length < 1) {
         searchResultTitle.classList.remove("hide_cont");
+        searchResultsDiv.classList.add("searchResults");
         searchResultsDiv.classList.add("showResults");
-        searchResultsDiv.innerHTML = "<img src='http://www.footprint360.com/media/wysiwyg/no-result-found.jpg'>";
-    }
-    else {
-      searchResultTitle.classList.remove("hide_cont");
-      searchResultsDiv.innerHTML = tableHelpersResult;
+        searchResultsDiv.innerHTML = "<img src='../images/no-result-found.jpg'>";
+    } else {
+        searchResultTitle.classList.remove("hide_cont");
+        searchResultsDiv.classList.add("showResults");
+        searchResultsDiv.innerHTML = tableHelpersResult;
     }
 }
 
@@ -211,9 +216,22 @@ backButton.addEventListener('click', goBackToMain);
 searchButton.addEventListener("click", filterItems)
 addStockButtonEl.addEventListener("click", showAddstock);
 hideAddStockFormButtEl.addEventListener("click", showAddstock);
+allInStockButton.addEventListener('click', function() {
+
+    capturedData = shoes;
+    searchResultsDiv.classList.remove("showResults");
+    searchResultsDiv.classList.remove("searchResultsDiv");
+    searchResultsDiv.classList.add("hide_cont");
+    searchResultTitle.classList.add("hide_cont");
+    allInStockTitle.classList.remove("hide_cont");
+    allInStockDisplayDiv.classList.remove("hide_cont");
+    allInStockDisplayDiv.innerHTML = tableResultTemplate({
+        dataSearched: capturedData
+    });
+});
 SubmAddStockFormButt.addEventListener('click', function(e) {
     e.preventDefault();
-    addStock(shoes)
+    addStock(shoes);
     addStockForm.classList.toggle("addShoes");
     onBrowserLoadEl();
 });
