@@ -68,8 +68,8 @@
                 </div>
             </div>
         </script>
-        <button class="button-secondary" type="button" name="button" data-showForm="show">Add Stock</button>
-
+        <button class="showAllInStock" type="button" name="button">Show All * </button>
+        <button class="button-secondary" type="button" name="button" data-showForm="show">Add Stock +</button>
         <form class="addShoes">
             <br>
             <input placeholder="Brand" class="brand" type="text" name="brand" required>
@@ -96,13 +96,18 @@
         <button class="searchButton" type="button" name="button">Search</button>
         <button id="backButton" class="button-primary" type="button" name="button">Back</button>
 
-        <div class="messageContainer">
-        </div>
 
         <h2 class="hide_cont sectTitle" align="center">Search Results</h2>
         <div class="searchResults">
         </div>
-    </disv>
+        <div class="messageContainer">
+        </div>
+        <h2 class="hide_cont allInStockTitle" align="center">All Shoes in Stock</h2>
+        <div class="displayAllInStock">
+        </div>
+    </div>
+    <div class="success-message">
+    </div>
     <script src="../js/shoe_catalogue/shoeCatalogue.js" charset="utf-8"></script>
 </body>
 
