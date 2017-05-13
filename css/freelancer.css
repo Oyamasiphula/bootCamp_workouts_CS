@@ -179,7 +179,18 @@ button.cancel:hover {
     background-color: #ce6161;
     border-color: rgb(245, 45, 45);
 }
-
+button.showAllInStock {
+  color: white;
+  background-color: #00513d;
+}
+button.button-secondary {
+  color: white;
+  background-color: #11882a;
+}
+button.searchButton {
+  color: white;
+  background-color: cornflowerblue;
+}
 .messages {
     background: url(../images/beachcombers-top-a-background-fill.jpg);
     margin-right: auto;
@@ -198,9 +209,12 @@ div.row div.row {
 }
 
 div.dataListContainer {
-    display: flex;
-    margin-top: 6em;
-    margin-bottom: inherit;
+  display: inline-flex;
+  margin-top: 6em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: inherit;
+  position: relative;
 }
 
 .placeHolder {
