@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Is same day ?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/freelancer.css">
+    <link rel="icon" type="jpg" href="../images/greetIcon.jpg">
+    <script src="../js/deps/handlebars.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>Matching Days</h2>
+            <div class="days"><hr>
+                <div class="day" data-week="0" ><h5>Sunday</h5></div>
+                <div class="day" data-week="1" ><h5>Monday</h5></div>
+                <div class="day" data-week="2" ><h5>Tuesday</h5></div>
+                <div class="day" data-week="3" ><h5>Wednesday</h5></div>
+                <div class="day" data-week="4" ><h5>Thursday</h5></div>
+                <div class="day" data-week="5" ><h5>Friday</h5></div>
+                <div class="day" data-week="6" ><h5>Saturday</h5></div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <span>Date1: </span><input class="date1" type="date" name="" value="">
+            <span>Date2: </span><input class="date2" type="date" name="" value="">
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style media="screen">
+    input.date1,input.date2 {
+        margin-bottom: 1.5rem;
+        color: blueviolet;
+        text-align: -webkit-right;
+    }
+    input.date2{
+      color: red
+    }
+
+    .days {
+        display: flex
+    }
+
+    .day {
+        height: initial;
+        text-align: center;
+        margin: auto;
+        width: 15%;
+        border: 1px solid black;
+    }
+</style>
