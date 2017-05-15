@@ -1,4 +1,5 @@
 var greet = function(language, name) {
+
     var properNameForm = name.charAt(0).toUpperCase() + name.substring(1)
 
     var Sotho_greet = "Dumela, " + properNameForm;
@@ -17,5 +18,13 @@ var greet = function(language, name) {
 };
 var getName = function(name) {
     var properNameForm = name.charAt(0).toUpperCase() + name.substring(1);
-    return properNameForm;
+
+    var personGreeted = {};
+
+    if (personGreeted["name"] === undefined) {
+        personGreeted["name"] = properNameForm;
+    }
+    window.alert(personGreeted.name);
+
+    return personGreeted;
 };
