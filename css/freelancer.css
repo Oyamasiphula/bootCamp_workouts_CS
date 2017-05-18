@@ -153,26 +153,31 @@ div.container form input {
     margin-left: auto;
     width: 30%;
 }
-input.date1,input.date2 {
+
+input.date1, input.date2 {
     margin-bottom: 1.5rem;
     color: blueviolet;
     text-align: -webkit-right;
 }
-input.date2{
-  color: red
+
+input.date2 {
+    color: red
 }
 
 .days {
-    display: flex
+    display: inline-flex;
+    margin: auto;
 }
 
 .day {
     height: initial;
     text-align: center;
-    margin: auto;
+    margin: auto 10px;
     width: 15%;
+    display: inline-table;
     border: 1px solid black;
 }
+
 button.submit {
     float: right;
     margin-left: auto;
@@ -198,18 +203,22 @@ button.cancel:hover {
     background-color: #ce6161;
     border-color: rgb(245, 45, 45);
 }
+
 button.showAllInStock {
-  color: white;
-  background-color: #00513d;
+    color: white;
+    background-color: #00513d;
 }
+
 button.button-secondary {
-  color: white;
-  background-color: #11882a;
+    color: white;
+    background-color: #11882a;
 }
+
 button.searchButton {
-  color: white;
-  background-color: cornflowerblue;
+    color: white;
+    background-color: cornflowerblue;
 }
+
 .messages {
     background: url(../images/beachcombers-top-a-background-fill.jpg);
     margin-right: auto;
@@ -228,12 +237,12 @@ div.row div.row {
 }
 
 div.dataListContainer {
-  display: inline-flex;
-  margin-top: 6em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: inherit;
-  position: relative;
+    display: inline-flex;
+    margin-top: 6em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: inherit;
+    position: relative;
 }
 
 .placeHolder {
