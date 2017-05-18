@@ -11,8 +11,6 @@ function matchingDays(dateInputs) {
     var date2Val = new Date(date2.value),
         date2day = date2Val.getDay();
 
-console.log(date2Val , date2day);
-
       for (var i = 0; i < days.length; i++) {
 
           if (date1day === Number(days[i].dataset.weekId)) {
