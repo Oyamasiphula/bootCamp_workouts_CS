@@ -2,6 +2,9 @@ var days = document.querySelectorAll(".day"),
     date1 = document.querySelector(".date1"),
     date2 = document.querySelector(".date2");
 
+var backButtonElement = document.querySelector("#backButton");
+
+
 function matchingDays(dateInputs) {
   dateInputs.addEventListener("change", function() {
 
@@ -30,3 +33,9 @@ function matchingDays(dateInputs) {
 }
 matchingDays(date1);
 matchingDays(date2);
+
+var strLink = 'file:///home/oyama/projects/Codex_Repo/bootCamp_workouts_CS/index.html';
+var goBackToMain = function() {
+    window.location.href = strLink;
+}
+backButton.addEventListener('click', goBackToMain);
