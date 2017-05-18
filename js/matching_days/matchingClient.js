@@ -4,12 +4,16 @@ var days = document.querySelectorAll(".day"),
 
 function matchingDays(dateInputs) {
   dateInputs.addEventListener("change", function() {
-      for (var i = 0; i < days.length; i++) {
-      var date1Val = new Date(date1.value),
-          date1day = date1Val.getDay();
 
-      var date2Val = new Date(date2.value),
-          date2day = date2Val.getDay();
+    var date1Val = new Date(date1.value),
+        date1day = date1Val.getDay();
+
+    var date2Val = new Date(date2.value),
+        date2day = date2Val.getDay();
+
+console.log(date2Val , date2day);
+
+      for (var i = 0; i < days.length; i++) {
 
           if (date1day === Number(days[i].dataset.weekId)) {
             days[i].style.backgroundColor = "blue";
@@ -20,8 +24,8 @@ function matchingDays(dateInputs) {
           if (date1day === Number(days[i].dataset.weekId) && date2day === Number(days[i].dataset.weekId)) {
               days[i].style.backgroundColor = "green";
           }
-          if (!date1day === Number(days[i].dataset.weekId)) {
-            days[i].style.backgroundColor = "";
+          if (date1day !== Number(days[i].dataset.weekId) && date2day !== Number(days[i].dataset.weekId)) {
+              days[i].style.backgroundColor = "";
           }
       };
   });
