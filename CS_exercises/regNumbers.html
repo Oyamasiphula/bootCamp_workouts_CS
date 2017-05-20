@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Registration numbers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/freelancer.css">
+    <link rel="icon" type="jpg" href="../images/greetIcon.jpg">
+    <script src="../js/deps/handlebars.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 align="center">Registration Number</h1>
+        <div class="container">
+            <div id="container" align="center">
+                <img src="../images/d4.jpg" alt="">
+            </div>
+        </div>
+        <form>
+            <br>
+            <input placeholder="enter registration" class="regitration" type="text" name="regitration" required>
+            <hr>
+            <div class="formButt">
+                <button id="submit" class="submit" type="submit" name="button">Add +</button>
+            </div>
+        </form>
+
+        <script id=regListTemp type="text/x-handlebers">
+            <ul>
+                {{#each regList}}
+                <li>{{this.reg}}</li>
+                {{/each}}
+            </ul>
+        </script>
+
+
+        <div class="regListOutput">
+        </div>
+
+    </div>
+    <script src="../js/registration_number/reg_numbers.js" charset="utf-8"></script>
+</body>
+
+</html>
