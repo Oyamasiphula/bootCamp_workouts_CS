@@ -217,14 +217,16 @@ searchButton.addEventListener("click", filterItems)
 addStockButtonEl.addEventListener("click", showAddstock);
 hideAddStockFormButtEl.addEventListener("click", showAddstock);
 allInStockButton.addEventListener('click', function() {
-
+  
     capturedData = shoes;
+
     searchResultsDiv.classList.remove("showResults");
     searchResultsDiv.classList.remove("searchResultsDiv");
     searchResultsDiv.classList.add("hide_cont");
     searchResultTitle.classList.add("hide_cont");
     allInStockTitle.classList.remove("hide_cont");
     allInStockDisplayDiv.classList.remove("hide_cont");
+
     allInStockDisplayDiv.innerHTML = tableResultTemplate({
         dataSearched: capturedData
     });
