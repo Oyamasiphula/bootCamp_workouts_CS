@@ -219,6 +219,19 @@ button.searchButton {
     background-color: cornflowerblue;
 }
 
+div.regListOutput li {
+    background-color: #fefcfd;
+    border: 5px solid black;
+    border-radius: 6px;
+    font-size: x-large;
+    margin: auto;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 20%;
+    position: relative;
+    display: block;
+}
+
 .messages {
     background: url(../images/beachcombers-top-a-background-fill.jpg);
     margin-right: auto;
