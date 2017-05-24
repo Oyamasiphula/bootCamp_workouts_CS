@@ -9,7 +9,7 @@ var optionTemplate = document.querySelector(".options"),
     messageOut = document.querySelector("h4.messageOut"),
     dataSearchedTemplate = document.querySelector(".searchedDataSummary"),
     searchButton = document.querySelector(".searchButton"),
-    allInStockButton = document.querySelector(".showAllInStock"),
+    allInStockButton = document.querySelector(".showAll"),
     backButtonElement = document.querySelector("#backButton"),
     addStockButtonEl = document.querySelector(".button-secondary"),
     addStockForm = document.querySelector(".addShoes"),
@@ -217,7 +217,7 @@ searchButton.addEventListener("click", filterItems)
 addStockButtonEl.addEventListener("click", showAddstock);
 hideAddStockFormButtEl.addEventListener("click", showAddstock);
 allInStockButton.addEventListener('click', function() {
-  
+
     capturedData = shoes;
 
     searchResultsDiv.classList.remove("showResults");
