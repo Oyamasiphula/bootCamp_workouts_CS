@@ -25,12 +25,14 @@
         <form>
             <br>
             <input placeholder="enter registration" class="regitration" type="text" name="regitration" required>
-            <hr>
+            <br>
             <div class="formButt">
                 <button id="submit" class="submit" type="submit" name="button">Add +</button>
             </div>
+            <hr>
+            <h5>Show recently added registrations number.</h5>
+            <button class="showAll" id="showAll" type="button" name="button">Show All * </button>
         </form>
-
         <script id=regListTemp type="text/x-handlebers">
             <ul>
                 {{#each regList}}
@@ -39,7 +41,13 @@
             </ul>
         </script>
 
-
+        <div class="row" id="opt">
+                <h5>Choose all from location.</h5>
+                <input type="radio" class="location" name="location" value="Cape Town" id="Cape Town">Cape Town
+                <input type="radio" class="location" name="location" value="Bellville" id="Bellville">Bellville
+                <input type="radio" class="location" name="location" value="Paarl" id="Paarl">Paarl
+        </div>
+        <hr>
         <div class="regListOutput">
         </div>
 
