@@ -62,6 +62,10 @@ section {
     border: 1px solid black;
 }
 
+#opt {
+    text-align: -webkit-center;
+}
+
 #menu {
     padding-top: 10em;
     border: 1px solid black;
@@ -204,9 +208,13 @@ button.cancel:hover {
     border-color: rgb(245, 45, 45);
 }
 
-button.showAllInStock {
+button.showAll {
     color: white;
     background-color: #00513d;
+}
+
+button#showAll {
+    background-color: #4855ae;
 }
 
 button.button-secondary {
