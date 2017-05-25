@@ -202,6 +202,13 @@ button.submit:hover {
     border-color: #6495ed;
 }
 
+button.searchButton:hover {
+    color: #FFF;
+    background-color: rgb(193, 230, 252);
+    border-color: #6495ed;
+    color: initial;
+}
+
 button.cancel:hover {
     color: #080808;
     background-color: #ce6161;
@@ -353,4 +360,8 @@ form {
 .showResults {
     text-align: center;
     display: block;
+}
+.fa-warning:before, .fa-exclamation-triangle:before {
+    color: tomato;
+    content: "\f071";
 }
