@@ -12,13 +12,20 @@ var regList = [];
 
 var add = function(e) {
     e.preventDefault();
-    var registration = regNumberInput.value
-    if (registration.trim().length === 0 || typeof(registration) === Number) {
+    var regNumberInputVal = regNumberInput.value;
+
+    var organisedRegPlate =  regNumberInputVal.replace(/[&\/\\#,+()=$~%_`.@!^|;'":*?<>{}]/g, "");
+      let plateLocationChars = organisedRegPlate.substring(0,3);
+      let capitaliseLocChars = plateLocationChars.toUpperCase();
+      let wellOrganisedRegInputVal = organisedRegPlate.replace(plateLocationChars, capitaliseLocChars);
+
+
+    if (wellOrganisedRegInputVal.trim().length === 0 || typeof(wellOrganisedRegInputVal) === Number) {
         alert("Please enter a valid regstration !")
         return
     }
     regList.push({
-        reg: registration
+        reg: wellOrganisedRegInputVal
     });
     regListOutput.innerHTML = regTempInst({
         regList: regList
