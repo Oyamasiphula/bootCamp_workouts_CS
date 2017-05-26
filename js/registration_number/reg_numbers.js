@@ -7,64 +7,41 @@ var regNumberInput = document.querySelector(".regitration"),
     regListOutput = document.querySelector(".regListOutput"),
     radios = document.querySelectorAll(".location");
 
-
-var regList = [];
+var initEmptyRegList = [];
 
 var add = function(e) {
     e.preventDefault();
-    var regNumberInputVal = regNumberInput.value;
 
-    var organisedRegPlate =  regNumberInputVal.replace(/[&\/\\#,+()=$~%_`.@!^|;'":*?<>{}]/g, "");
-      let plateLocationChars = organisedRegPlate.substring(0,3);
-      let capitaliseLocChars = plateLocationChars.toUpperCase();
-      let wellOrganisedRegInputVal = organisedRegPlate.replace(plateLocationChars, capitaliseLocChars);
+    var regNumberInputVal = validateInputAndParseCorrectValue(regNumberInput.value);
+    let organisedRegPlate = cleanUneccesaryRegTokens(regNumberInputVal),
+        plateLocationChars = organisedRegPlate.substring(0, 3),
+        capitaliseLocChars = plateLocationChars.toUpperCase(),
+        wellOrganisedRegInputVal = organisedRegPlate.replace(plateLocationChars, capitaliseLocChars);
 
-
-    if (wellOrganisedRegInputVal.trim().length === 0 || typeof(wellOrganisedRegInputVal) === Number) {
-        alert("Please enter a valid regstration !")
-        return
+    var finalList = getListOfValidReg(initEmptyRegList, wellOrganisedRegInputVal);
+    if (finalList[0].reg == "") {
+        return 
     }
-    regList.push({
-        reg: wellOrganisedRegInputVal
-    });
     regListOutput.innerHTML = regTempInst({
-        regList: regList
+        regList: initEmptyRegList
     });
-    regNumberInput.value = ""
+    regNumberInput.value = "";
 };
 
-var getRadioValue = function(radioListOptions) {
-  let radioOptValue = "";
-  radioListOptions.forEach(function(actualOption) {
-    if (actualOption.type === 'radio' && actualOption.checked) {
-      // get value, set checked flag (update the value to gain access )or do whatever I need to
-      val = actualOption.value;
-      radioOptValue = val
-    }
-  });
-  return radioOptValue;
-};
-var filter = function(capturedRegPlates) {
-    for (var i = 0; i < regList.length; i++) {
-        let eachPlate = regList[i].reg;
-        if (eachPlate.startsWith(getRadioValue(radios))) {
-            capturedRegPlates.push({
-                "reg": eachPlate
-            });
-        }
+var noResult = function(list) {
+    if (list.length === 0) {
+        regListOutput.innerHTML = "<div class='row' id='opt'><h4><i class='fa fa-exclamation-triangle fa-2x' aria-hidden='true'></i> No registration numbers added or found <i class='fa fa-exclamation-triangle fa-2x' aria-hidden='true'></i></h4></div>";
+        return true;
     };
-    return capturedRegPlates;
-};
-
-var noResult = function(list) {if (list.length === 0) {regListOutput.innerHTML = "<div class='row' id='opt'><h4><i class='fa fa-exclamation-triangle fa-2x' aria-hidden='true'></i> No registration numbers added or found <i class='fa fa-exclamation-triangle fa-2x' aria-hidden='true'></i></h4></div>";return true;};}
+}
 
 addRegNumber.addEventListener("click", add);
 showAllButton.addEventListener('click', function() {
-    if (noResult(regList)) {
+    if (noResult(initEmptyRegList)) {
         return false;
     }
     regListOutput.innerHTML = regTempInst({
-        regList
+        regList: initEmptyRegList
     })
 });
 
