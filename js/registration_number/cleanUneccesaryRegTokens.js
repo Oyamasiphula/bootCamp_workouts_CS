@@ -1,9 +1,8 @@
 var cleanUneccesaryRegTokens = function(inputVal) {
-  if (inputVal === undefined) {
-    return
-  }
-  else{
-    var cleanInvalidSymbols = inputVal.replace(/[&\/\\#,+()=$~%_`.@!^|;'":*?<>{}]/g, "");
-    return cleanInvalidSymbols;
-  }
+    if (inputVal === undefined) {
+        return
+    } else {
+        let cleanInvalidSymbols = inputVal.replace(/[&\/\\#,+()=$~%_`.@!^|;'":*?<>{}]/g, "");
+        return cleanInvalidSymbols;
+    }
 };
