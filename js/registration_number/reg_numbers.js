@@ -20,7 +20,7 @@ var add = function(e) {
 
     var finalList = getListOfValidReg(initEmptyRegList, wellOrganisedRegInputVal);
     if (finalList[0].reg == "") {
-        return 
+        return ;
     }
     regListOutput.innerHTML = regTempInst({
         regList: initEmptyRegList
@@ -30,15 +30,14 @@ var add = function(e) {
 
 var noResult = function(list) {
     if (list.length === 0) {
-        regListOutput.innerHTML = "<div class='row' id='opt'><h4><i class='fa fa-exclamation-triangle fa-2x' aria-hidden='true'></i> No registration numbers added or found <i class='fa fa-exclamation-triangle fa-2x' aria-hidden='true'></i></h4></div>";
-        return true;
-    };
+        return regListOutput.innerHTML = "<div class='row' id='opt'><h4><i class='fa fa-exclamation-triangle fa-2x' aria-hidden='true'></i> No registration numbers added or found <i class='fa fa-exclamation-triangle fa-2x' aria-hidden='true'></i></h4></div>";
+     };
 }
 
 addRegNumber.addEventListener("click", add);
 showAllButton.addEventListener('click', function() {
     if (noResult(initEmptyRegList)) {
-        return false;
+        return ;
     }
     regListOutput.innerHTML = regTempInst({
         regList: initEmptyRegList
@@ -47,7 +46,7 @@ showAllButton.addEventListener('click', function() {
 
 searchButton.addEventListener('click', function() {
     if (noResult(filter([]))) {
-        return false;
+        return ;
     }
     regListOutput.innerHTML = regTempInst({
         regList: filter([])
