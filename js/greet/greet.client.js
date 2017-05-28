@@ -1,5 +1,5 @@
 var okButton = document.getElementById('okButton');
-    nameFieldInput = document.getElementById('specifyName'),
+nameFieldInput = document.getElementById('specifyName'),
     radios = document.getElementsByName('languages'),
     backButtonElement = document.querySelector("#backButton"),
     resetButton = document.querySelector(".button-primary");
@@ -12,9 +12,9 @@ var getNameVal = function() {
 
     var name = nameFieldInput.value;
 
-    if (name.trim().length === 0 || name.trim().length < 4 ) {
-      nameFieldInput.value = '';
-      window.alert("Please enter correct name");
+    if (name.trim().length === 0 || name.trim().length < 4) {
+        nameFieldInput.value = '';
+        window.alert("Please enter correct name");
         return;
     }
     for (var i = 0, collLen = radios.length; i < collLen; i++) {
@@ -38,11 +38,11 @@ var strLink = 'file:///home/oyama/projects/Codex_Repo/bootCamp_workouts_CS/index
 var goBackToMain = function() {
     window.location.href = strLink;
 }
-var resetCounter = function(){
-  window.myStorage.removeItem("count");
-  count = 0;
-  window.myStorage.setItem("count",count)
-  document.querySelector("#totalNumOfGreetings").innerHTML = count;
+var resetCounter = function() {
+    window.myStorage.removeItem("count");
+    count = 0;
+    window.myStorage.setItem("count", count)
+    document.querySelector("#totalNumOfGreetings").innerHTML = count;
 }
 okButton.addEventListener('click', getNameVal);
 resetButton.addEventListener('click', resetCounter);
