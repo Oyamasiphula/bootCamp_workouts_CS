@@ -24,7 +24,7 @@ var getName = function(name) {
     if (personGreeted["name"] === undefined) {
         personGreeted["name"] = properNameForm;
     }
-    window.alert(personGreeted.name);
+    // window.alert(personGreeted.name);
 
     return personGreeted;
 };
