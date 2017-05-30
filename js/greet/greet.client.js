@@ -1,12 +1,8 @@
-var okButton = document.getElementById('okButton');
-nameFieldInput = document.getElementById('specifyName'),
+var okButton = document.getElementById('okButton'),
+    nameFieldInput = document.getElementById('specifyName'),
     radios = document.getElementsByName('languages'),
     backButtonElement = document.querySelector("#backButton"),
     resetButton = document.querySelector(".button-primary");
-
-var count = 0,
-    myStorage = localStorage,
-    count = myStorage.getItem('count');
 
 var getNameVal = function() {
 
@@ -27,7 +23,6 @@ var getNameVal = function() {
             continue;
         }
         document.getElementById('speciedNameDisplay').innerHTML = greet(selectedLanguage, getName(name));
-        count++;
         myStorage.setItem("count", count);
         document.querySelector("#totalNumOfGreetings").innerHTML = "You have been greeted " + count + " Times";
         nameFieldInput.value = '';
