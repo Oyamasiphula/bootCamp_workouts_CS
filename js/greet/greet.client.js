@@ -29,7 +29,7 @@ var getNameVal = function() {
     }
 };
 
-var strLink = 'file:///home/oyama/projects/Codex_Repo/bootCamp_workouts_CS/index.html';
+var strLink = './index.html';
 var goBackToMain = function() {
     window.location.href = strLink;
 }
