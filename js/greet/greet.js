@@ -13,10 +13,3 @@ var greet = function(language, nameObj) {
         return English_greet;
     };
 };
-
-
-// getName()
-// getName()
-// getName()
-// getName()
-// getName()
