@@ -14,8 +14,8 @@ var getNameVal = function(name) {
             //skip the code below go to the next loop item
             continue;
         }
-        outPut("specificNameDisplay", greet(selectedLanguage, getNameProperties(name)));
-        outPut("totalNumOfGreetings", "You have been greeted " + personGreeted.count + " Times");
+        printOutPut("specificNameDisplay", greet(selectedLanguage, getNameProperties(name)));
+        printOutPut("totalNumOfGreetings", "You have been greeted " + personGreeted.count + " Times");
         nameFieldInput.value = '';
     }
 };
