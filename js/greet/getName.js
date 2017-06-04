@@ -1,18 +1,18 @@
-var personGreeted = {};
-
 var myStorage = localStorage,
     counterTrack = myStorage.getItem('count');
 
-
 var getNameProperties = function(nameGreeted) {
+    var personGreeted = {};
 
     var properNameFormat = nameGreeted.charAt(0).toUpperCase() + nameGreeted.substring(1);
-console.log(personGreeted[name]);
+
     if (personGreeted[name] === undefined) {
-        personGreeted["name"] = properNameFormat;
-        personGreeted["count"] = counter();
+        personGreeted[properNameFormat] = 0;
     }
+    personGreeted[properNameFormat] += 1;
     // myStorage.setItem("count", count);
-    console.log(personGreeted);
-    return personGreeted;
+    return {
+        name : properNameFormat,
+        count:personGreeted[properNameFormat]
+    };
 };

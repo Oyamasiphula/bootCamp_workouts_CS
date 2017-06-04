@@ -15,7 +15,7 @@ var getNameVal = function(name) {
             continue;
         }
         printOutPut("specificNameDisplay", greet(selectedLanguage, getNameProperties(name)));
-        printOutPut("totalNumOfGreetings", "You have been greeted " + personGreeted.count + " Times");
+        printOutPut("totalNumOfGreetings", "You have been greeted " + getNameProperties(name).count + " Times");
         nameFieldInput.value = '';
     }
 };
@@ -23,7 +23,7 @@ var getNameVal = function(name) {
 var strLink = './index.html';
 var goBackToMain = function() {
     window.location.href = strLink;
-}
+};
 
 okButton.addEventListener('click', function(e) {
     e.preventDefault;

@@ -1,7 +1,7 @@
 var greet = function(language, nameObj) {
-    var Sotho_greet = "Dumela, " + personGreeted.name;
-    var Xhosa_greet = "Molo, " + personGreeted.name;
-    var English_greet = "Hello, " + personGreeted.name;
+    var Sotho_greet = "Dumela, " + getNameProperties.name;
+    var Xhosa_greet = "Molo, " + getNameProperties.name;
+    var English_greet = "Hello, " + getNameProperties.name;
 
     if ("Sotho" === language) {
         return Sotho_greet;
