@@ -1,18 +1,60 @@
-var myStorage = localStorage,
-    counterTrack = myStorage.getItem('count');
+// var myStorage = localStorage,
+//     counterTrack = myStorage.getItem('count');
 
-var getNameProperties = function(nameGreeted) {
-    var personGreeted = {};
 
-    var properNameFormat = nameGreeted.charAt(0).toUpperCase() + nameGreeted.substring(1);
+var counter = function(people){
 
-    if (personGreeted[name] === undefined) {
-        personGreeted[properNameFormat] = 0;
+    var peopleGreeted = {};
+
+    if (people){
+
+        peopleGreeted = people;
     }
-    personGreeted[properNameFormat] += 1;
-    // myStorage.setItem("count", count);
+
+     function greetOnePerson(name){
+
+
+        if (peopleGreeted[name] === undefined){
+            peopleGreeted[name] = 0;
+        }
+        peopleGreeted[name] += 1;
+        console.log(peopleGreeted);
+    }
+    console.log(peopleGreeted);
+     function greetedCount(){
+        //return Object.keys(peopleGreeted).length;
+
+        var list = [];
+        for (people in peopleGreeted){
+            list.push(people);
+        }
+        return list.length;
+        //return counter;
+    }
+
+     function timesGreeted(name){
+        return peopleGreeted[name];
+    }
+
+     function all(){
+        return peopleGreeted;
+    }
+
     return {
-        name : properNameFormat,
-        count:personGreeted[properNameFormat]
-    };
+        greetOnePerson,
+        greetedCount,
+        timesGreeted,
+        all
+    }
 };
+
+var getNameVal = function(nameField) {
+  var name = nameField;
+  var properNameFormat = name.charAt(0).toUpperCase() + name.substring(1);
+  return properNameFormat;
+};
+
+var factoryFunction = counter({});
+
+console.log(factoryFunction.greetOnePerson(getNameVal()));
+console.log(factoryFunction.greetOnePerson(getNameVal()));

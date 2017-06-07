@@ -14,8 +14,8 @@ var getNameVal = function(name) {
             //skip the code below go to the next loop item
             continue;
         }
-        printOutPut("specificNameDisplay", greet(selectedLanguage, getNameProperties(name)));
-        printOutPut("totalNumOfGreetings", "You have been greeted " + getNameProperties(name).count + " Times");
+        printOutPut("specificNameDisplay", greet(selectedLanguage, getNameProperties.greetOnePerson));
+        printOutPut("totalNumOfGreetings", "You have been greeted " + getNameProperties.count + " Times");
         nameFieldInput.value = '';
     }
 };
@@ -27,7 +27,7 @@ var goBackToMain = function() {
 
 okButton.addEventListener('click', function(e) {
     e.preventDefault;
-    getNameVal(nameFieldInput.value);
+    factoryFunction.greetOnePerson(getNameVal(nameFieldInput.value));
 });
 resetButton.addEventListener('click', resetCounter);
 backButton.addEventListener('click', goBackToMain);

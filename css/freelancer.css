@@ -42,12 +42,28 @@ div.container div.container img {
     left: 47%;
 }
 
+.layout-app-main .fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    transform: translateZ(0);
+}
+
+section#header.layout-app-main {
+    display: block;
+    position: fixed;
+    height: 20em;
+    width: 100%;
+}
+
 section img {
     position: absolute;
     width: 100%;
     max-width: 100%;
     z-index: -1;
-    height: 20em;
+    opacity: .4;
+    height: 36%;
 }
 
 .section2 {
@@ -59,7 +75,6 @@ section img {
 section {
     height: 21em;
     width: 100%;
-    border: 1px solid black;
 }
 
 #opt {
@@ -361,6 +376,7 @@ form {
     text-align: center;
     display: block;
 }
+
 .fa-warning:before, .fa-exclamation-triangle:before {
     color: tomato;
     content: "\f071";
