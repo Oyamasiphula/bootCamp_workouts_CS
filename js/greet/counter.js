@@ -33,4 +33,4 @@ var counter = function(people) {
     }
 };
 
-const factoryFunction = counter({});
+var factoryFunction = counter({});
