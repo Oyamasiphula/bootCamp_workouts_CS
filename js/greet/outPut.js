@@ -1,3 +1,3 @@
-var printOutPut = function(elemId,messageLine){
-  document.getElementById(elemId).innerHTML = messageLine;
+var printOutPut = function(elemId, messageLine) {
+    document.getElementById(elemId).innerHTML = messageLine;
 }
