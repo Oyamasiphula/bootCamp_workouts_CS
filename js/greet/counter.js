@@ -1,30 +1,27 @@
 var counter = function(people) {
 
     var peopleGreeted = {};
-
     if (people) {
         peopleGreeted = people;
     }
 
-     let greetOnePerson = function(name) {
+    let greetOnePerson = function(name) {
         if (peopleGreeted[name] === undefined) {
             peopleGreeted[name] = 0;
         }
         peopleGreeted[name] += 1;
     }
-
-     let greetedCount = function() {
+    let greetedCount = function() {
         var list = [];
         for (people in peopleGreeted) {
             list.push(people);
         }
         return list.length;
     }
-
-     let timesGreeted = function(name) {
+    let timesGreeted = function(name) {
         return peopleGreeted[name];
     }
-     let all = function() {
+    let all = function() {
         return peopleGreeted;
     }
 
@@ -36,4 +33,4 @@ var counter = function(people) {
     }
 };
 
-var factoryFunction = counter({});
+const factoryFunction = counter({});
