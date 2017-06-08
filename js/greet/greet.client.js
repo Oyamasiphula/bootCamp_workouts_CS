@@ -1,10 +1,10 @@
 var getNameValidation = function(name) {
-  
-  if (name.trim().length === 0 || name.trim().length < 4) {
-      nameFieldInput.value = '';
-      window.alert("Please enter correct name");
-      return;
-  }
+
+    if (name.trim().length === 0 || name.trim().length < 4) {
+        nameFieldInput.value = '';
+        window.alert("Please enter correct name");
+        return;
+    }
     for (var i = 0, collLen = radios.length; i < collLen; i++) {
 
         var selectedLanguage = radios[i].value
