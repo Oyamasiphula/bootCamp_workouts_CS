@@ -2,10 +2,27 @@ var assert = chai.assert;
 
 describe("Test for all the client JS code", function() {
     it("Should test for greet function", function() {
-
         assert.equal(greet("English", "Janine"), "Hello, Janine");
         assert.equal(greet("Xhosa", "Janine"), "Molo, Janine");
         assert.equal(greet("Sotho", "Janine"), "Dumela, Janine");
+    });
+    it("Should test for greet getName function which returns the first letter of name Capitalized", function() {
+        assert.equal(getNameVal("janine"), "Janine");
+    });
+    it("Should test for greet conter function which returns the object with times the name greeted value", function() {
+        var greetPerson = factoryFunction.greetOnePerson("Janine");
+        assert.deepEqual(factoryFunction.all(), {
+            "Janine": 1
+        });
+        var greetPerson = factoryFunction.greetOnePerson("Janine");
+        assert.deepEqual(factoryFunction.all(), {
+            "Janine": 2
+        });
+        var greetPerson = factoryFunction.greetOnePerson("Oyama");
+        assert.deepEqual(factoryFunction.all(), {
+            "Janine": 2,
+            "Oyama": 1
+        });
     });
     it("Should test for which day function", function() {
         assert.equal(dayDetails('Saturday'), true);
@@ -127,9 +144,9 @@ describe("Test for all the client JS code", function() {
         assert.deepEqual(['CJ 678 543', 'CJ 67890'], allPaarl('CL 900, CJ 678 543, CA 34567, CJ 67890, CN 7864'));
     });
     it("Should test for allFromTown function that returns all registration number plates from a specific town", function() {
-      var fromStellies = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341','CL');
-      assert.deepEqual(fromStellies, ['CL 124', 'CL 345', 'CL 341'])
-      var fromKuilsriver = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341','CF');
-      assert.deepEqual(fromKuilsriver, [])
+        var fromStellies = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341', 'CL');
+        assert.deepEqual(fromStellies, ['CL 124', 'CL 345', 'CL 341'])
+        var fromKuilsriver = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341', 'CF');
+        assert.deepEqual(fromKuilsriver, [])
     });
 });
