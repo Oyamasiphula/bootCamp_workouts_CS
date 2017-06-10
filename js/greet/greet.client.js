@@ -14,9 +14,10 @@ var getNameValidation = function(name) {
             //skip the code below go to the next loop item
             continue;
         }
+
         printOutPut("specificNameDisplay", greet(selectedLanguage, name));
         let nameKeyVal = name;
-        printOutPut("totalNumOfGreetings", "You have been greeted " + factoryFunction.all()[nameKeyVal] + " Times");
+        printOutPut("totalNumOfGreetings", "You have been greeted " + factoryFunction.greetedPeopleObj()[nameKeyVal] + " Times");
     }
 };
 
@@ -29,7 +30,17 @@ okButton.addEventListener('click', function(e) {
     e.preventDefault;
     let actualPersonsName = getNameVal(nameFieldInput.value);
     factoryFunction.greetOnePerson(actualPersonsName);
-    getNameValidation(getNameVal(nameFieldInput.value))
+    getNameValidation(getNameVal(nameFieldInput.value));
+
+    var retrievedData = JSON.stringify(factoryFunction.greetedPeopleObj());
+    storeData(retrievedData)
+    console.log(storeData(retrievedData));
+
+    // for (var key in retrievedData) {
+    //   if (retrievedData.hasOwnProperty(key)) {
+    //     console.log(key);
+    //   }
+    // }
     nameFieldInput.value = '';
 
 });
