@@ -1,5 +1,4 @@
-var storeData = function(greetedPeopleInfoTrack){
-  // console.log(JSON.stringify(greetedPeopleInfoTrack));
+var storeData = function(greetedPeopleInfoTrack) {
     if (window.localStorage) {
         localStorage.setItem("peopleGreeted", greetedPeopleInfoTrack);
         return localStorage.people;
