@@ -1,6 +1,6 @@
 var resetCounter = function() {
-    window.myStorage.removeItem("count");
+    localStorage.clear()
+    factoryFunction = counter({})
     count = 0;
-    window.myStorage.setItem("count", count)
-    document.querySelector("#totalNumOfGreetings").innerHTML = count;
+    document.querySelector("#totalNumOfGreetings").innerHTML = "A greet counter has been reset to : " + count;
 }
