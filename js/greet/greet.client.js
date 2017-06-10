@@ -3,7 +3,7 @@ var getNameValidation = function(name) {
     if (name.trim().length === 0 || name.trim().length < 4) {
         nameFieldInput.value = '';
         window.alert("Please enter correct name");
-        return;
+        return false;
     }
     for (var i = 0, collLen = radios.length; i < collLen; i++) {
 
@@ -32,15 +32,13 @@ okButton.addEventListener('click', function(e) {
     factoryFunction.greetOnePerson(actualPersonsName);
     getNameValidation(getNameVal(nameFieldInput.value));
 
-    var retrievedData = JSON.stringify(factoryFunction.greetedPeopleObj());
-    storeData(retrievedData)
-    console.log(storeData(retrievedData));
-
-    // for (var key in retrievedData) {
-    //   if (retrievedData.hasOwnProperty(key)) {
-    //     console.log(key);
-    //   }
-    // }
+    console.log(actualPersonsName.toString());
+    if (actualPersonsName.length > 3) {
+        var retrievedData = JSON.stringify(factoryFunction.greetedPeopleObj());
+        storeData(retrievedData);
+        var obj = localStorage.peopleGreeted
+        console.log(obj[actualPersonsName]);
+    }
     nameFieldInput.value = '';
 
 });
