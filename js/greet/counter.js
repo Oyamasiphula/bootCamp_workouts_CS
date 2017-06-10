@@ -21,7 +21,7 @@ var counter = function(people) {
     let timesGreeted = function(name) {
         return peopleGreeted[name];
     }
-    let all = function() {
+    let greetedPeopleObj = function() {
         return peopleGreeted;
     }
 
@@ -29,7 +29,7 @@ var counter = function(people) {
         greetOnePerson,
         greetedCount,
         timesGreeted,
-        all
+        greetedPeopleObj
     }
 };
 
