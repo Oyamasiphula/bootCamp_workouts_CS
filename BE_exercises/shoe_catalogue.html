@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Shoe catalogue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/freelancer.css">
+    <link rel="icon" type="jpg" href="../images/greetIcon.jpg">
+    <script src="../js/deps/handlebars.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 align="center">Shoe Catalogue</h1>
+        <div class="container">
+            <div id="container" align="center">
+                <img src="http://espacepro.citymalin.com/resources/images/lacoste(1).gif" alt="">
+            </div>
+        </div>
+        <script class="options" type="text/x-handlebars-template">
+            <select class="brandOptions" name="">
+              <option class="placeHolder" value="" selected="true" disabled>SELECT BRAND</option>
+              {{#each brands}}
+              <option value="{{this.brand}}">{{this.brand}}</option>
+              {{/each}}
+            </select>
+
+            <select class="colorOptions" name="">
+              <option  class="placeHolder" value="" selected="true" disabled>SELECT COLOUR</option>
+              {{#each color}}
+              <option value="{{this.color}}">{{this.color}}</option>
+              {{/each}}
+            </select>
+
+            <br>
+            <select class="sizesOptions" name="">
+              <option class="placeHolder" value="" selected="true" disabled>SELECT SIZE</option>
+              {{#each sizes}}
+              <option value="{{this.size}}">{{this.size}}</option>
+              {{/each}}
+            </select>
+        </script>
+
+        <script class="searchedDataSummary" type="text/x-handlebars-template">
+            <div class="row">
+                <div id="div_top_hypers">
+                    <ul id="ul_top_hypers">
+                        {{#each dataSearched}}
+                        <li>
+                            <div id="imageOut">
+                                <img class="shoes" src="../images/shoes/{{this.img}}" alt="">
+                            </div>
+                            <p class="messageOut">We have <b>{{this.in_stock}}</b> <b>{{this.color}}</b> in stock.</p>
+                            <div class="messages">
+                                <p class="messageOut"><pre><b>Brand</b> : {{this.brand}}</pre></p>
+                                <p class="messageOut"><pre><b>Color</b> : {{this.color}}</pre></p>
+                                <p class="messageOut"><pre><b>Size</b> : {{this.size}}</pre></p>
+                                <p class="messageOut"><pre><b>Price</b> : R{{this.price}}</pre></p>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </script>
+
+        <button class="showAll" type="button" name="button">Show All * </button>
+        <button class="button-secondary" type="button" name="button" data-showForm="show">Add Stock +</button>
+
+        <form class="addShoes">
+            <br>
+            <input placeholder="Brand" class="brand" type="text" name="brand" required>
+            <br>
+            <input placeholder="Color" class="color" type="text" name="color" required>
+            <br>
+            <input placeholder="Price" class="price" type="text" name="price" required>
+            <br>
+            <input placeholder="Size" class="size" type="text" name="size" required>
+            <br>
+            <input placeholder="Img" class="img" type="file" id="filetag" required>
+            <br>
+            <input placeholder="In_stock" class="in_stock" type="text" name="in_stock" required>
+            <hr>
+            <div class="formButt">
+                <button class="cancel" type="button" name="button" data-hide="hideFor">cancel</button>
+                <br>
+                <button class="submit" type="submit" name="button">Submit</button>
+            </div>
+        </form>
+
+        <div class="dataListContainer">
+        </div>
+        <button class="searchButton" type="button" name="button">Search</button>
+        <button id="backButton" class="button-primary" type="button" name="button">Back</button>
+        <h2 class="hide_cont sectTitle" align="center">Search Results</h2>
+        <div class="searchResults">
+        </div>
+        <div class="messageContainer">
+        </div>
+        <h2 class="hide_cont allInStockTitle" align="center">All Shoes in Stock</h2>
+        <div class="displayAllInStock">
+        </div>
+    </div>
+    <div class="success-message">
+    </div>
+    <script src="../js/shoe_catalogue/createUniqList.js" charset="utf-8"></script>
+    <script src="../js/shoe_catalogue/shoeCatalogue.js" charset="utf-8"></script>
+</body>
+
+</html>

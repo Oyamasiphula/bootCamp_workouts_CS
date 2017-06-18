@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Greet a friend</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/freelancer.css">
+    <link rel="icon" type="jpg" href="../images/greetIcon.jpg">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="one-half column">
+                <h3>Greet friend first version</h3>
+                <p>Name: <input class="u-full-width" name="specifyName" id="specifyName" placeholder="Please enter your name"></p>
+                Choose language?<br>
+                <input type="radio" name="languages" value="Sotho" id="seSotho">seSotho
+                <input type="radio" name="languages" value="Xhosa" id="seiXhosa">isiXhosa
+                <input type="radio" name="languages" value="English" id="English">English<br>
+                <br>
+                <div class="row">
+                    <div class="messages">
+                        <pre id="specificNameDisplay"></pre>
+                        <pre id="totalNumOfGreetings"></pre>
+                        <input id="resetButton" class="button-primary" type="reset" value="reset" />
+                    </div>
+                    <div class="row">
+                        <button id="okButton" class="submit" type="button" name="button">Submit</button>
+                        <button id="backButton" class="button-primary" type="button" name="button">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../js/greet/main.js" charset="utf-8"></script>
+<script src="../js/greet/counter.js" charset="utf-8"></script>
+<script src="../js/greet/localStorage.js" charset="utf-8"></script>
+<script src="../js/greet/resetCounter.js" charset="utf-8"></script>
+<script src="../js/greet/getName.js" charset="utf-8"></script>
+<script src="../js/greet/greet.client.js" charset="utf-8"></script>
+<script src="../js/greet/outPut.js" charset="utf-8"></script>
+<script src="../js/greet/greet.js" charset="utf-8"></script>
+
+</html>
