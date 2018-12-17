@@ -29,7 +29,6 @@ var counter = function(people) {
         };
         return peopleGreeted;
     };
-
     return {
         greetOnePerson,
         greetedCount,
