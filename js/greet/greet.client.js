@@ -21,7 +21,7 @@ var getNameValidation = function(name) {
     }
 };
 
-var strLink = './index.html';
+var strLink = '/index.html';
 var goBackToMain = function() {
     window.location.href = strLink;
 };
